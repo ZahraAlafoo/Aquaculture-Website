@@ -124,20 +124,6 @@
           ]
         }
       ]
-    },
-    "changeRule": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "changeRule",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
     }
   },
   "storage": {
@@ -211,11 +197,6 @@
           }
         }
       ]
-    },
-    "changeRule": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
     }
   }
 }
