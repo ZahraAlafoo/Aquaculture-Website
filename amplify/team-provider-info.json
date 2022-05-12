@@ -28,10 +28,6 @@
         "crudfunction": {
           "deploymentBucketName": "amplify-medaar-staging-14545-deployment",
           "s3Key": "amplify-builds/crudfunction-69524937423636445737-build.zip"
-        },
-        "changeRule": {
-          "deploymentBucketName": "amplify-medaar-staging-14545-deployment",
-          "s3Key": "amplify-builds/changeRule-68466e43583736674c54-build.zip"
         }
       },
       "auth": {
