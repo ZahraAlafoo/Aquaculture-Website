@@ -112,10 +112,10 @@ Amplify.configure(awsExports);
         <!-- ======= Sidebar ======= -->
         <aside id="sidebar" class="sidebar">
           <ul class="sidebar-nav" id="sidebar-nav">
-             <li class="nav-item" style="background-color:#FFFFFF">
-              <a class="nav-link" href="/" style="background-color:#FFFFFF">
-                <i class="bi bi-grid" style="color:#8F3838"></i>
-                <span style="color:#8F3838">Dashboard</span>
+            <li class="nav-item" style="background-color: #ffffff">
+              <a class="nav-link" href="/" style="background-color: #ffffff">
+                <i class="bi bi-grid" style="color: #8f3838"></i>
+                <span style="color: #8f3838">Dashboard</span>
               </a>
             </li>
             <!-- End Dashboard Nav -->
@@ -149,11 +149,11 @@ Amplify.configure(awsExports);
               </ul>
             </li>
 
-             <li class="nav-item" style="background-color:#FFF6F6">
+            <li class="nav-item" style="background-color: #fff6f6">
               <router-link to="/overview">
-                <a class="nav-link collapsed" style="background-color:#FFF6F6">
-                  <i class="bi bi-bell" style="color:red"></i>
-                  <span style="color:red">Tanks Overview</span>
+                <a class="nav-link collapsed" style="background-color: #fff6f6">
+                  <i class="bi bi-bell" style="color: red"></i>
+                  <span style="color: red">Tanks Overview</span>
                 </a>
               </router-link>
             </li>
@@ -198,9 +198,106 @@ Amplify.configure(awsExports);
             style="margin-bottom: 150px; margin-top: 50px"
           >
             <div class="row">
-              <div class="col-12">
+              <!-- <div class="col-12">
                 <div class="card">
                     <iframe src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&from=1648149404162&to=1650741404162&theme=light&panelId=4" width="100%" height="700" frameborder="0"></iframe>
+                </div>
+              </div> -->
+              <div class="col-6">
+                <div class="card">
+                  <iframe
+                    src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=14"
+                    width="450"
+                    height="200"
+                    frameborder="0"
+                    style="margin-left: 10%"
+                  ></iframe>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card">
+                  <iframe
+                    src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=15"
+                    width="450"
+                    height="200"
+                    frameborder="0"
+                    style="margin-left: 10%"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <div class="card">
+                  <iframe
+                    src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=17"
+                    width="450"
+                    height="200"
+                    frameborder="0"
+                    style="margin-left: 10%"
+                  ></iframe>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card">
+                  <iframe
+                    src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=16"
+                    width="450"
+                    height="200"
+                    frameborder="0"
+                    style="margin-left: 10%"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <div class="card">
+                  <iframe
+                    src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=18"
+                    width="450"
+                    height="200"
+                    frameborder="0"
+                    style="margin-left: 10%"
+                  ></iframe>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card">
+                  <iframe
+                    src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=19"
+                    width="450"
+                    height="200"
+                    frameborder="0"
+                    style="margin-left: 10%"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <div class="card">
+                  <iframe
+                    src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=20"
+                    width="450"
+                    height="200"
+                    frameborder="0"
+                    style="margin-left: 10%"
+                  ></iframe>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card">
+                  <iframe
+                    src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=21"
+                    width="450"
+                    height="200"
+                    frameborder="0"
+                    style="margin-left: 10%"
+                  ></iframe>
                 </div>
               </div>
             </div>
