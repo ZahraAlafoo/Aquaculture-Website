@@ -187,11 +187,6 @@
         }
       ]
     },
-    "upadatecontact": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
     "getnotifications": {
       "build": true,
       "providerPlugin": "awscloudformation",
