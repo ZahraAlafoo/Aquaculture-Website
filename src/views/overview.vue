@@ -204,7 +204,7 @@ Amplify.configure(awsExports);
                 </div>
               </div> -->
               <div class="col-6">
-                <div class="card">
+                <div class="card" style="padding-bottom:5%">
                   <iframe
                     src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=14"
                     width="450"
@@ -215,7 +215,7 @@ Amplify.configure(awsExports);
                 </div>
               </div>
               <div class="col-6">
-                <div class="card">
+                <div class="card" style="padding-bottom:5%">
                   <iframe
                     src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=15"
                     width="450"
@@ -229,7 +229,7 @@ Amplify.configure(awsExports);
 
             <div class="row">
               <div class="col-6">
-                <div class="card">
+                <div class="card" style="padding-bottom:5%">
                   <iframe
                     src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=17"
                     width="450"
@@ -240,7 +240,7 @@ Amplify.configure(awsExports);
                 </div>
               </div>
               <div class="col-6">
-                <div class="card">
+                <div class="card" style="padding-bottom:5%">
                   <iframe
                     src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=16"
                     width="450"
@@ -254,7 +254,7 @@ Amplify.configure(awsExports);
 
             <div class="row">
               <div class="col-6">
-                <div class="card">
+                <div class="card" style="padding-bottom:5%">
                   <iframe
                     src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=18"
                     width="450"
@@ -265,7 +265,7 @@ Amplify.configure(awsExports);
                 </div>
               </div>
               <div class="col-6">
-                <div class="card">
+                <div class="card" style="padding-bottom:5%">
                   <iframe
                     src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=19"
                     width="450"
@@ -279,7 +279,7 @@ Amplify.configure(awsExports);
 
             <div class="row">
               <div class="col-6">
-                <div class="card">
+                <div class="card" style="padding-bottom:5%">
                   <iframe
                     src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=20"
                     width="450"
@@ -290,7 +290,7 @@ Amplify.configure(awsExports);
                 </div>
               </div>
               <div class="col-6">
-                <div class="card">
+                <div class="card" style="padding-bottom:5%">
                   <iframe
                     src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=21"
                     width="450"
