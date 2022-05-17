@@ -47,17 +47,15 @@ Auth.configure(awsConfig);
                   </div>
                   <div class="text-center">
                     <button @click="submitForm" class="btn btn-primary">
-                      Submit</button
-                    ><!--<br><br>
-                    <a href="#">Forgot your password?</a>-->
+                      Submit
+                    </button>
                   </div>
                 </form>
               </div>
             </div>
           </div>
-           <router-link to="/Login"
-              ><a>Back to Sign In</a></router-link
-            ><br>
+          <router-link to="/Login"><a>Back to Sign In</a></router-link
+          ><br />
         </div>
       </div>
     </div>

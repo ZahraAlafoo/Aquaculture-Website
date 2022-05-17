@@ -25,8 +25,6 @@ Amplify.configure(awsExports);
         </div>
         <!-- End Logo -->
 
-        <!-- End Search Bar -->
-
         <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center">
             <li class="nav-item d-block d-lg-none">
@@ -421,7 +419,6 @@ export default {
        async signOut() {
       await Auth.signOut();
             this.$router.push('/Login')
-
     },
     async submitForm() {
       const user = await Auth.currentAuthenticatedUser();

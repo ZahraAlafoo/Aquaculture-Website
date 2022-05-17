@@ -24,8 +24,6 @@ Amplify.configure(awsExports);
         </div>
         <!-- End Logo -->
 
-        <!-- End Search Bar -->
-
         <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center">
             <li class="nav-item d-block d-lg-none">
@@ -198,11 +196,6 @@ Amplify.configure(awsExports);
             style="margin-bottom: 150px; margin-top: 50px"
           >
             <div class="row">
-              <!-- <div class="col-12">
-                <div class="card">
-                    <iframe src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&from=1648149404162&to=1650741404162&theme=light&panelId=4" width="100%" height="700" frameborder="0"></iframe>
-                </div>
-              </div> -->
               <div class="col-6">
                 <div class="card" style="padding-bottom:5%">
                   <iframe
@@ -342,14 +335,6 @@ export default {
       await Auth.signOut();
       this.$router.push("/Login");
     },
-  },
-  data() {
-    return {
-      formValues: {
-        min: "",
-        max: "",
-      },
-    };
   },
   mounted: function () {
     postscribe(

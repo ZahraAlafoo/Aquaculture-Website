@@ -25,8 +25,6 @@ Amplify.configure(awsExports);
         </div>
         <!-- End Logo -->
 
-        <!-- End Search Bar -->
-
         <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center">
             <li class="nav-item d-block d-lg-none">
@@ -113,21 +111,21 @@ Amplify.configure(awsExports);
         <!-- ======= Sidebar ======= -->
         <aside id="sidebar" class="sidebar">
           <ul class="sidebar-nav" id="sidebar-nav">
-             <li class="nav-item" style="background-color:#FFFFFF">
-              <a class="nav-link" href="/" style="background-color:#FFFFFF">
-                <i class="bi bi-grid" style="color:#8F3838"></i>
-                <span style="color:#8F3838">Dashboard</span>
+            <li class="nav-item" style="background-color: #ffffff">
+              <a class="nav-link" href="/" style="background-color: #ffffff">
+                <i class="bi bi-grid" style="color: #8f3838"></i>
+                <span style="color: #8f3838">Dashboard</span>
               </a>
             </li>
             <!-- End Dashboard Nav -->
 
             <li class="nav-item">
               <a
-                class="nav-link "
+                class="nav-link"
                 data-bs-target="#components-nav"
                 data-bs-toggle="collapse"
                 href="#"
-                style="background-color:#FFF6F6"
+                style="background-color: #fff6f6"
               >
                 <i class="bi bi-pen"></i><span>Update Conditions</span
                 ><i class="bi bi-chevron-down ms-auto"></i>
@@ -145,7 +143,8 @@ Amplify.configure(awsExports);
                 </li>
                 <li>
                   <router-link to="/change-oxygen">
-                    <i class="bi bi-circle"></i><span style="color:red">Change Oxygen Rates</span>
+                    <i class="bi bi-circle"></i
+                    ><span style="color: red">Change Oxygen Rates</span>
                   </router-link>
                 </li>
               </ul>
@@ -293,7 +292,10 @@ export default {
     },
     async submitForm() {
       if (this.formValues.min != "" && this.formValues.max != "") {
-        if (this.formValues.min > this.formValues.max || this.formValues.min == this.formValues.max) {
+        if (
+          this.formValues.min > this.formValues.max ||
+          this.formValues.min == this.formValues.max
+        ) {
           alert("Error: Max value should be greater than the min value");
         } else {
           const data = {
@@ -304,48 +306,9 @@ export default {
             },
           };
           const apiData = await API.post("formapi", "/contact", data);
-          //console.log({ apiData });
           alert("Values Updated Successfully");
         }
       }
-      //alert("test function");
-      /* if (this.formValues.min != "" && this.formValues.max != "") {
-        if (this.formValues.min > this.formValues.max) {
-          alert("Error: Max value should be greater than the min value");
-        } else {*/
-      /*
-          var xhttp = new XMLHttpRequest();
-          xhttp.open(
-            "GET",
-            "https://g1e6q5mb88.execute-api.us-east-1.amazonaws.com/v1/values?min=" +
-              this.formValues.min +
-              "&max=" +
-              this.formValues.max,
-            true
-          );
-          xhttp.send();
-          alert("Values Updated Successfully");
-          */
-
-      //const user = Auth.currentAuthenticatedUser();
-      //const token = user.signInUSerSession.idToken.jwtToken;
-      //console.log({ token });
-      /*
-         const requestInfo = {
-            headers: { min: this.formValues.min, max: this.formValues.max },
-          };
-          alert(this.formValues.min);
-           const data = {
-        body: {
-          min: this.formValues.min,
-          max: this.formValues.max,
-          type: "oxygen"
-        },
-      };
-          const data2 = await API.get("changeRule", "/rule", data);
-          console.log({ data2 });*/
-      //}
-      // }
     },
   },
   data() {

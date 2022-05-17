@@ -62,7 +62,8 @@
                             class="dropdown-item"
                             @click="
                               exportGraphs(
-                                `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=8&width=1000&height=500&tz=Asia%2FBahrain`, 'temperature_gauge.pdf'
+                                `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=8&width=1000&height=500&tz=Asia%2FBahrain`,
+                                'temperature_gauge.pdf'
                               )
                             "
                             >Export as PDF</a
@@ -92,7 +93,8 @@
                             class="dropdown-item"
                             @click="
                               exportGraphs(
-                                `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=6&width=1000&height=500&tz=Asia%2FBahrain`, 'temperature_graph.pdf'
+                                `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=6&width=1000&height=500&tz=Asia%2FBahrain`,
+                                'temperature_graph.pdf'
                               )
                             "
                             >Export as PDF</a
@@ -158,7 +160,8 @@
                             class="dropdown-item"
                             @click="
                               exportGraphs(
-                                `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=12&width=1000&height=500&tz=Asia%2FBahrain`, 'oxygen_gauge.pdf'
+                                `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=12&width=1000&height=500&tz=Asia%2FBahrain`,
+                                'oxygen_gauge.pdf'
                               )
                             "
                             >Export as PDF</a
@@ -188,7 +191,8 @@
                             class="dropdown-item"
                             @click="
                               exportGraphs(
-                                `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=10&width=1000&height=500&tz=Asia%2FBahrain`,'oxygen_graph.pdf'
+                                `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=10&width=1000&height=500&tz=Asia%2FBahrain`,
+                                'oxygen_graph.pdf'
                               )
                             "
                             >Export as PDF</a
@@ -208,7 +212,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

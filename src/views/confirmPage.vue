@@ -61,9 +61,8 @@ Auth.configure(awsConfig);
                       "
                       @click="submitForm2"
                     >
-                      Resend code</button
-                    ><!--<br><br>
-                    <a href="#">Forgot your password?</a>-->
+                      Resend code
+                    </button>
                   </div>
                 </form>
               </div>
@@ -78,7 +77,7 @@ Auth.configure(awsConfig);
 <script>
 import postscribe from "postscribe";
 import dashboard from "./dashboard.vue";
-//alert(this.$route.params.id);
+
 export default {
   name: "confirmPage",
   data() {
@@ -91,24 +90,22 @@ export default {
   },
   methods: {
     async submitForm() {
-    
       try {
         await Auth.confirmSignUp(this.uid, this.formValues.code);
-        //const user = await Auth.signIn(this.uid, "Test123?");
       } catch (error) {
         var err = error.toString();
         console.log("error confirming sign up", err);
         let text = err;
         let result = text.includes("InvalidLambdaResponseException");
         if (result) {
-          alert("Confirmed. You can successfully login now/nYou should receive an email with a link. Click on the confirmtion link to be able to receive notifictions");
+          alert(
+            "Confirmed. You can successfully login now/nYou should receive an email with a link. Click on the confirmtion link to be able to receive notifictions"
+          );
           this.$router.push("/Master");
         } else {
           alert("error confirming sign up", err);
         }
       }
-
-      //const user = await Auth.signIn(this.uid.toString, this.pass.toString);
     },
     async submitForm2() {
       try {

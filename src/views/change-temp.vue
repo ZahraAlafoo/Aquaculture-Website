@@ -24,8 +24,6 @@ Amplify.configure(awsExports);
         </div>
         <!-- End Logo -->
 
-        <!-- End Search Bar -->
-
         <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center">
             <li class="nav-item d-block d-lg-none">
@@ -294,8 +292,6 @@ export default {
       this.$router.push("/Login");
     },
     async submitForm() {
-   
-     
       if (this.formValues.min != "" && this.formValues.max != "") {
         if (this.formValues.min > this.formValues.max || this.formValues.min == this.formValues.max) {
           alert("Error: Max value should be greater than the min value");

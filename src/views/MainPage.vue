@@ -25,8 +25,6 @@ Auth.configure(awsConfig);
         </div>
         <!-- End Logo -->
 
-        <!-- End Search Bar -->
-
         <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center">
             <li class="nav-item d-block d-lg-none">

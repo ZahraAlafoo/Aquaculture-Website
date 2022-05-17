@@ -86,9 +86,8 @@ Auth.configure(awsConfig);
 
                   <div class="text-center">
                     <button @click="submitForm" class="btn btn-primary">
-                      Sign in</button
-                    ><!--<br><br>
-                    <a href="#">Forgot your password?</a>-->
+                      Sign in
+                    </button>
                   </div>
                 </form>
                 <router-link to="/forgotpass"
@@ -297,9 +296,9 @@ export default {
           this.formValues.password
         );
         //location.reload();
-        this.$router.push('/MainPage')
+        this.$router.push("/MainPage");
       } catch (error) {
-         var err = error.toString();
+        var err = error.toString();
         let text = err;
         let result = text.includes("UserNotConfirmedException");
         if (result) {
@@ -311,7 +310,6 @@ export default {
           }
 
           this.$router.push("/confirmPage/" + this.formValues.email);
-
         } else {
           if (
             this.formValues.email != " " ||
@@ -332,21 +330,11 @@ export default {
           password: this.formValues2.password,
           attributes: {
             given_name: this.formValues2.first,
-            family_name: this.formValues2.family, // optional
-            phone_number: this.formValues2.phone, // optional - E.164 number convention
-            // other custom attributes
+            family_name: this.formValues2.family,
+            phone_number: this.formValues2.phone,
           },
         });
-
         this.$router.push("/confirmPage/" + this.formValues2.email);
-
-        //var email = this.formValues2.email;
-        /* this.$router.push({
-        name: "/confirmPage", //use name for router push
-        params: { num }
-      });*/
-        // alert("worked");
-        //console.log(user);
       } catch (error) {
         console.log("error signing up. Please try again");
       }

@@ -23,8 +23,6 @@ Amplify.configure(awsExports);
         </div>
         <!-- End Logo -->
 
-        <!-- End Search Bar -->
-
         <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center">
             <li class="nav-item d-block d-lg-none">
@@ -111,10 +109,10 @@ Amplify.configure(awsExports);
         <!-- ======= Sidebar ======= -->
         <aside id="sidebar" class="sidebar">
           <ul class="sidebar-nav" id="sidebar-nav">
-            <li class="nav-item" style="background-color:#FFFFFF">
-              <a class="nav-link" href="/" style="background-color:#FFFFFF">
-                <i class="bi bi-grid" style="color:#8F3838"></i>
-                <span style="color:#8F3838">Dashboard</span>
+            <li class="nav-item" style="background-color: #ffffff">
+              <a class="nav-link" href="/" style="background-color: #ffffff">
+                <i class="bi bi-grid" style="color: #8f3838"></i>
+                <span style="color: #8f3838">Dashboard</span>
               </a>
             </li>
             <!-- End Dashboard Nav -->
@@ -157,11 +155,11 @@ Amplify.configure(awsExports);
               </router-link>
             </li>
 
-            <li class="nav-item" style="background-color:#FFF6F6">
+            <li class="nav-item" style="background-color: #fff6f6">
               <router-link to="/notifications">
-                <a class="nav-link collapsed" style="background-color:#FFF6F6">
-                  <i class="bi bi-bell" style="color:red"></i>
-                  <span style="color:red">Notifications</span>
+                <a class="nav-link collapsed" style="background-color: #fff6f6">
+                  <i class="bi bi-bell" style="color: red"></i>
+                  <span style="color: red">Notifications</span>
                 </a>
               </router-link>
             </li>
@@ -196,7 +194,11 @@ Amplify.configure(awsExports);
             <div class="row">
               <div class="col-lg-2"></div>
               <div class="col-lg-8">
-                <div class="card" style="padding-top: 30px">
+                <div
+                  class="card"
+                  style="padding-top: 30px"
+                  :hidden="formValues.min == 0"
+                >
                   <div class="card-body">
                     <div v-for="(album, idx) in formValues.min" :key="idx">
                       <div
@@ -219,6 +221,16 @@ Amplify.configure(awsExports);
                       </div>
                     </div>
                   </div>
+                </div>
+
+                <div
+                  style="
+                    padding-left: 42%;
+                    padding-top: 10%;
+                    padding-bottom: 10%;
+                  "
+                >
+                  <div class="loader" :hidden="formValues.min != 0"></div>
                 </div>
               </div>
             </div>
@@ -259,8 +271,43 @@ import { Auth } from "aws-amplify";
 
 export default {
   name: "notifications",
+  methods: {
+    async signOut() {
+      await Auth.signOut();
+      this.$router.push("/Login");
+    },
+  },
+  data() {
+    return {
+      formValues: {
+        min: 0,
+        titles: "",
+        dates: "",
+        messages: "",
+      },
+    };
+  },
   async mounted() {
-     postscribe(
+    await API.get("getnotifications", "/notifications", {})
+      .then((result) => {
+        var test = JSON.parse(result.body);
+        var titles = [];
+        var messages = [];
+        var dates = [];
+        for (let index = 0; index < test.length; index++) {
+          titles[index] = test[index].title.S;
+          messages[index] = test[index].message.S;
+          dates[index] = test[index].date.S;
+        }
+        this.formValues.min = test;
+        this.formValues.titles = titles;
+        this.formValues.messages = messages;
+        this.formValues.dates = dates;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    postscribe(
       "#container",
       `<script>/**
 * Template Name: NiceAdmin - v2.2.2
@@ -573,48 +620,37 @@ export default {
 
 })();<\/script>`
     );
-    await API.get("getnotifications", "/notifications", {})
-      .then((result) => {
-        var test = JSON.parse(result.body);
-        var titles = [];
-        var messages = [];
-        var dates = [];
-        for (let index = 0; index < test.length; index++) {
-          titles[index] = test[index].title.S;
-          messages[index] = test[index].message.S;
-          dates[index] = test[index].date.S;
-        }
-        this.formValues.min = test;
-        this.formValues.titles = titles;
-        this.formValues.messages = messages;
-        this.formValues.dates = dates;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-    function l() {
-      return 3;
-    }
-  },
-  methods: {
-    async signOut() {
-      await Auth.signOut();
-      this.$router.push("/Login");
-    },
-  },
-  data() {
-    return {
-      formValues: {
-        min: 1,
-        titles: "",
-        dates: "",
-        messages: ""
-      },
-    };
   },
 };
 </script>
 
 <style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #844c50;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 </style>
