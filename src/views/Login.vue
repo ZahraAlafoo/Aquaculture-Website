@@ -296,7 +296,8 @@ export default {
           this.formValues.email,
           this.formValues.password
         );
-        location.reload();
+        //location.reload();
+        this.$router.push('/MainPage')
       } catch (error) {
          var err = error.toString();
         let text = err;
