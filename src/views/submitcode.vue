@@ -97,6 +97,9 @@ Auth.configure(awsConfig);
               </div>
             </div>
           </div>
+           <router-link to="/Login"
+              ><a>Back to Sign In</a></router-link
+            ><br>
         </div>
       </div>
     </div>
