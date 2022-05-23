@@ -300,6 +300,7 @@ export default {
       } catch (error) {
         var err = error.toString();
         let text = err;
+        console.log("error resending code1: ", err);
         let result = text.includes("UserNotConfirmedException");
         if (result) {
           alert("error signing in. User not confirmed");
