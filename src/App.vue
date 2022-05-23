@@ -6,7 +6,7 @@ import Master from "./views/Master.vue";
 
 
 <template>
-  <!--<authenticator id="auth">
+  <authenticator id="auth">
     <template v-slot:header>
       <div style="padding: var(--amplify-space-large); text-align: center">
         <img
@@ -16,8 +16,9 @@ import Master from "./views/Master.vue";
         />
       </div>
     </template> 
-    <Master />
-  </authenticator> --><Master/>
+  
+  </authenticator> 
+  <!--<Master/> -->
 
 
 
