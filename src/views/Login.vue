@@ -321,11 +321,15 @@ export default {
               alert("Incorrect email or password");
             } else {
               if (
-                !test.includes(
+                !text.includes(
                   "Error: Pending sign-in attempt already in progress"
                 )
               ) {
-                alert("error signing in. Please try again");
+                if (text.includes("UserNotFoundException")) {
+                  alert("User does not does not exist");
+                } else {
+                  alert("error signing in. Please try again");
+                }
               }
             }
           }
