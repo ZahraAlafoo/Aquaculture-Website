@@ -206,12 +206,12 @@ Amplify.configure(awsExports);
                         role="alert"
                       >
                         <h4 class="alert-heading">
-                          {{ formValues.titles[idx] }}
+                          {{ formValues.titles[idx].title }}
                         </h4>
                         <br />
-                        <p>{{ formValues.messages[idx] }}</p>
+                        <p>{{ formValues.titles[idx].message }}</p>
                         <hr />
-                        <p class="mb-0">{{ formValues.dates[idx] }}</p>
+                        <p class="mb-0">{{ formValues.titles[idx].date.toUTCString() }}</p>
                         <button
                           type="button"
                           class="btn-close"
@@ -294,15 +294,32 @@ export default {
         var titles = [];
         var messages = [];
         var dates = [];
+        var notifications = new Array();
         for (let index = 0; index < test.length; index++) {
-          titles[index] = test[index].title.S;
-          messages[index] = test[index].message.S;
-          dates[index] = test[index].date.S;
+          notifications[index] = {
+            title: test[index].title.S,
+            message: test[index].message.S,
+            date: new Date(test[index].date.S),
+          };
+          //titles[index] = test[index].title.S;
+          //messages[index] = test[index].message.S;
+          //dates[index] = test[index].date.S;
+        }
+
+        for (var i = 0; i < notifications.length; i++) {
+          for (var j = i + 1; j < notifications.length; j++) {
+            var tmp = 0;
+            if (notifications[i].date < notifications[j].date) {
+              tmp = notifications[i];
+              notifications[i] = notifications[j];
+              notifications[j] = tmp;
+            }
+          }
         }
         this.formValues.min = test;
-        this.formValues.titles = titles;
-        this.formValues.messages = messages;
-        this.formValues.dates = dates;
+        this.formValues.titles = notifications;
+        //this.formValues.messages = messages;
+        //this.formValues.dates = dates;
       })
       .catch((err) => {
         console.log(err);
