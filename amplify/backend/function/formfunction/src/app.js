@@ -75,11 +75,11 @@ app.post('/contact', function (req, res) {
     if(req.body.type == "temp"){
       fname = 'arn:aws:lambda:us-east-1:138581057382:function:get_data_temperature';
       rname = 'temp_notification';
-      sqlStatement = 'SELECT deviceID, temp, "' + req.body.min + '" as min_temp , "' + req.body.max + '" as max_temp FROM "ESP8266" where temp <"' + req.body.min + '" or temp >"' + req.body.max + '"';
+      sqlStatement = 'SELECT deviceID, temp, "' + req.body.min + '" as min_temp , "' + req.body.max + '" as max_temp FROM "esp8266/pub" where temp <"' + req.body.min + '" or temp >"' + req.body.max + '"';
     } else if(req.body.type == "oxygen") {
       fname = 'arn:aws:lambda:us-east-1:138581057382:function:get_data_oxygen';
       rname = 'oxygen_notification';
-      sqlStatement = 'SELECT deviceID, do, "' + req.body.min + '" as min_do , "' + req.body.max + '" as max_do FROM "ESP8266" where do <"' + req.body.min + '" or do >"' + req.body.max + '"';
+      sqlStatement = 'SELECT deviceID, do, "' + req.body.min + '" as min_do , "' + req.body.max + '" as max_do FROM "esp8266/pub" where do <"' + req.body.min + '" or do >"' + req.body.max + '"';
     }
 
   var params = {

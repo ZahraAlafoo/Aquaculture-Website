@@ -316,7 +316,17 @@ export default {
             this.formValues.email != "" ||
             this.formValues.password != ""
           ) {
-            alert("error signing in. Please try again");
+            if (text.includes("NotAuthorizedException")) {
+              alert("Incorrect email or password");
+            } else {
+              if (
+                !test.includes(
+                  "Error: Pending sign-in attempt already in progress"
+                )
+              ) {
+                alert("error signing in. Please try again");
+              }
+            }
           }
         }
 
