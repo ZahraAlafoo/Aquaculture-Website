@@ -1,4 +1,7 @@
 <template>
+  <button :hidden="formValues.useremail != 'medaar.manager@hotmail.com'">
+    zahra
+  </button>
   <div class="pagetitle">
     <h1>Dashboard</h1>
     <nav>
@@ -220,8 +223,16 @@
 
 
 <script>
+import { Auth } from "aws-amplify";
 export default {
   name: "dashboard",
+  data() {
+    return {
+      formValues: {
+        phone_number: "",
+      },
+    };
+  },
   methods: {
     async exportGraphs(url, name) {
       var doc = new jsPDF("p", "mm", "a4");
@@ -251,6 +262,16 @@ export default {
       doc.addImage(image, "PNG", 0, 0, 225, 112);
       doc.save(name);
     },
+  },
+  async beforeCreate() {
+    try {
+      var email = "email";
+      await Auth.currentAuthenticatedUser().then((user) => {
+        this.formValues.useremail = user.attributes.email;
+      });
+    } catch (err) {
+      console.log(err);
+    }
   },
   mounted: function () {
     const recaptchaScript = document.createElement("script");

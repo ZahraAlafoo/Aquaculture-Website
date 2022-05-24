@@ -143,7 +143,7 @@ Amplify.configure(awsExports);
             <li class="nav-item" style="background-color: #fff6f6">
               <router-link to="/overview">
                 <a class="nav-link collapsed" style="background-color: #fff6f6">
-                  <i class="bi bi-bell" style="color: red"></i>
+                  <i class="bi bi-archive" style="color: red"></i>
                   <span style="color: red">Tanks Overview</span>
                 </a>
               </router-link>

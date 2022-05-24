@@ -146,7 +146,7 @@ Auth.configure(awsConfig);
             <li class="nav-item">
               <router-link to="/overview">
                 <a class="nav-link collapsed">
-                  <i class="bi bi-bell"></i>
+                  <i class="bi bi-archive"></i>
                   <span>Tanks Overview</span>
                 </a>
               </router-link>
