@@ -10,7 +10,7 @@ Auth.configure(awsConfig);
   <section class="section profile">
     <div class="row">
       <div class="col-lg-3"></div>
-      <div class="col-lg-7">
+      <div class="col-lg-6">
         <div class="row">
           <!-- Sales Card -->
 
