@@ -9,13 +9,13 @@ Auth.configure(awsConfig);
 <template>
   <section class="section profile">
     <div class="row">
-      <div class="col-lg-4"></div>
+      <div class="col-lg-3"></div>
       <div class="col-lg-7">
         <div class="row">
           <!-- Sales Card -->
 
           <!-- Reports -->
-          <div class="col-11" >
+          <div class="col-11" style="margin-left: 4%;">
             <div
               style="padding: var(--amplify-space-large); text-align: center"
             >
