@@ -18,15 +18,12 @@ import Master from "./views/Master.vue";
     </template> 
     <Master />
   </authenticator> -->
-  <Master/>
-
-
-
+  <Master />
 </template>
 
 <script>
 import { Auth } from "aws-amplify";
- import VueRouter from 'vue-router'
+import VueRouter from "vue-router";
 
 export default {
   name: "App",

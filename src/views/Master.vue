@@ -11,7 +11,8 @@ Auth.configure(awsConfig);
 
 <template>
   <div id="q-app">
-<router-view/>  </div>
+    <router-view />
+  </div>
 </template>
 
 <script>
@@ -28,16 +29,27 @@ export default {
   },
   async beforeCreate() {
     try {
-        var email = "email";
-    await Auth.currentAuthenticatedUser().then((user) => {
-      email = user.attributes.email;
-    });
-        this.$router.push('/MainPage')
+      var email = "email";
+      await Auth.currentAuthenticatedUser().then((user) => {
+        email = user.attributes.email;
+      });
+      let url = window.location;
+      if (url.toString().includes("/overview")) {
+        this.$router.push("/overview");
+      } else if (url.toString().includes("/notifications")) {
+        this.$router.push("/notifications");
+      } else if (url.toString().includes("/profile")) {
+        this.$router.push("/change-profile");
+      } else if (url.toString().includes("/change-oxygen")) {
+        this.$router.push("/change-oxygen");
+      } else if (url.toString().includes("/change-temp")) {
+        this.$router.push("/change-temp");
+      } else {
+        this.$router.push("/MainPage");
+      }
     } catch (err) {
-        this.$router.push('/Login')
+      this.$router.push("/Login");
     }
-   
-    
   },
 };
 </script>
