@@ -167,7 +167,7 @@ Auth.configure(awsConfig);
                     <label
                       for="firstName"
                       class="col-md-4 col-lg-3 col-form-label"
-                      >Given Name*</label
+                      >First Name*</label
                     >
                     <div class="col-md-8 col-lg-9">
                       <input
