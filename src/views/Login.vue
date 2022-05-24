@@ -10,12 +10,12 @@ Auth.configure(awsConfig);
   <section class="section profile">
     <div class="row">
       <div class="col-lg-3"></div>
-      <div class="col-lg-6">
+      <div class="col-lg-7">
         <div class="row">
           <!-- Sales Card -->
 
           <!-- Reports -->
-          <div class="col-12" style="margin-left: 2%;">
+          <div class="col-11" style="margin-left: 2%;">
             <div
               style="padding: var(--amplify-space-large); text-align: center"
             >
