@@ -199,12 +199,12 @@ Amplify.configure(awsExports);
                         role="alert"
                       >
                         <h4 class="alert-heading">
-                          {{ formValues.titles[idx].title }}
+                          {{ formValues.notifications[idx].title }}
                         </h4>
                         <br />
-                        <p>{{ formValues.titles[idx].message }}</p>
+                        <p>{{ formValues.notifications[idx].message }}</p>
                         <hr />
-                        <p class="mb-0">{{ formValues.titles[idx].date.toUTCString() }}</p>
+                        <p class="mb-0">{{ formValues.notifications[idx].date.toLocaleString() }}</p>
                         <button
                           type="button"
                           class="btn-close"
@@ -274,9 +274,7 @@ export default {
     return {
       formValues: {
         min: 0,
-        titles: "",
-        dates: "",
-        messages: "",
+        notifications: "",
       },
     };
   },
@@ -284,9 +282,6 @@ export default {
     await API.get("getnotifications", "/notifications", {})
       .then((result) => {
         var test = JSON.parse(result.body);
-        var titles = [];
-        var messages = [];
-        var dates = [];
         var notifications = new Array();
         for (let index = 0; index < test.length; index++) {
           notifications[index] = {
@@ -294,9 +289,6 @@ export default {
             message: test[index].message.S,
             date: new Date(test[index].date.S),
           };
-          //titles[index] = test[index].title.S;
-          //messages[index] = test[index].message.S;
-          //dates[index] = test[index].date.S;
         }
 
         for (var i = 0; i < notifications.length; i++) {
@@ -310,9 +302,7 @@ export default {
           }
         }
         this.formValues.min = test;
-        this.formValues.titles = notifications;
-        //this.formValues.messages = messages;
-        //this.formValues.dates = dates;
+        this.formValues.notifications = notifications;
       })
       .catch((err) => {
         console.log(err);
