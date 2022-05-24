@@ -203,7 +203,7 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=14"
-                      width="450"
+                      width="350"
                       height="200"
                       frameborder="0"
                       style="margin-left: 10%"
@@ -225,7 +225,7 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=15"
-                      width="450"
+                      width="350"
                       height="200"
                       frameborder="0"
                       style="margin-left: 10%"
@@ -250,7 +250,7 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=17"
-                      width="450"
+                      width="350"
                       height="200"
                       frameborder="0"
                       style="margin-left: 10%"
@@ -272,7 +272,7 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=16"
-                      width="450"
+                      width="350"
                       height="200"
                       frameborder="0"
                       style="margin-left: 10%"
@@ -297,7 +297,7 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=18"
-                      width="450"
+                      width="350"
                       height="200"
                       frameborder="0"
                       style="margin-left: 10%"
@@ -319,7 +319,7 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=19"
-                      width="450"
+                      width="350"
                       height="200"
                       frameborder="0"
                       style="margin-left: 10%"
@@ -344,7 +344,7 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=20"
-                      width="450"
+                      width="350"
                       height="200"
                       frameborder="0"
                       style="margin-left: 10%"
@@ -366,7 +366,7 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=21"
-                      width="450"
+                      width="350"
                       height="200"
                       frameborder="0"
                       style="margin-left: 10%"
