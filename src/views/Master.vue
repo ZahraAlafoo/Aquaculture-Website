@@ -39,7 +39,7 @@ export default {
       } else if (url.toString().includes("/notifications")) {
         this.$router.push("/notifications");
       } else if (url.toString().includes("/profile")) {
-        this.$router.push("/change-profile");
+        this.$router.push("/profile");
       } else if (url.toString().includes("/change-oxygen")) {
         this.$router.push("/change-oxygen");
       } else if (url.toString().includes("/change-temp")) {
