@@ -203,10 +203,10 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=14"
-                      width="350"
+                      width="100%"
                       height="200"
                       frameborder="0"
-                      style="margin-left: 10%"
+                     
                     ></iframe>
                   </div>
                 </div>
