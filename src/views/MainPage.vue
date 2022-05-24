@@ -27,9 +27,7 @@ Auth.configure(awsConfig);
 
         <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center">
-           
-
-            <li class="nav-item dropdown pe-3">
+           <li class="nav-item dropdown pe-3">
               <!-- End Profile Iamge Icon -->
 
               <a

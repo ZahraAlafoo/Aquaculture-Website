@@ -8,10 +8,9 @@ Amplify.configure(awsExports);
 </script>
 
 <template>
-<html>
-  <body>
-
-<!-- ======= Header ======= -->
+  <html>
+    <body>
+      <!-- ======= Header ======= -->
       <header id="header" class="header fixed-top d-flex align-items-center">
         <div class="d-flex align-items-center justify-content-between">
           <a href="/" class="logo d-flex align-items-center">
@@ -27,31 +26,28 @@ Amplify.configure(awsExports);
 
         <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center">
-            <li class="nav-item d-block d-lg-none">
-              <a class="nav-link nav-icon search-bar-toggle" href="#">
-                <i class="bi bi-search"></i>
-              </a>
-            </li>
-            <!-- End Search Icon-->
-
-            
-
             <li class="nav-item dropdown pe-3">
-              
-             <!-- End Profile Iamge Icon -->
+              <!-- End Profile Iamge Icon -->
 
-              <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="../../public/frontend/assets/img/user.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2"> 
-                   <authenticator id="auth">
+              <a
+                class="nav-link nav-profile d-flex align-items-center pe-0"
+                href="#"
+                data-bs-toggle="dropdown"
+              >
+                <img
+                  src="../../public/frontend/assets/img/user.jpg"
+                  alt="Profile"
+                  class="rounded-circle"
+                />
+                <span class="d-none d-md-block dropdown-toggle ps-2">
+                  <authenticator id="auth">
                     <template v-slot="{ user }">
-                      
-                        {{ user.attributes.given_name }}
-                        {{ user.attributes.family_name }}
-                     </template
-                    ></authenticator
-                  > </span>
-          </a><!-- End Profile Iamge Icon -->
+                      {{ user.attributes.given_name }}
+                      {{ user.attributes.family_name }}
+                    </template></authenticator
+                  >
+                </span> </a
+              ><!-- End Profile Iamge Icon -->
 
               <ul
                 class="
@@ -60,13 +56,11 @@ Amplify.configure(awsExports);
                 "
               >
                 <li class="dropdown-header">
-                 <authenticator id="auth">
+                  <authenticator id="auth">
                     <template v-slot="{ user }">
-                      
-                        {{ user.attributes.given_name }}
-                        {{ user.attributes.family_name }}
-                     </template
-                    ></authenticator
+                      {{ user.attributes.given_name }}
+                      {{ user.attributes.family_name }}
+                    </template></authenticator
                   >
                 </li>
 
@@ -76,13 +70,11 @@ Amplify.configure(awsExports);
 
                 <li>
                   <router-link to="/profile">
-                  <a
-                    class="dropdown-item d-flex align-items-center"
-                    
+                    <a class="dropdown-item d-flex align-items-center">
+                      <i class="bi bi-person"></i>
+                      <span>My Profile</span>
+                    </a></router-link
                   >
-                    <i class="bi bi-person"></i>
-                    <span>My Profile</span>
-                  </a></router-link>
                 </li>
 
                 <li>
@@ -111,10 +103,10 @@ Amplify.configure(awsExports);
         <!-- ======= Sidebar ======= -->
         <aside id="sidebar" class="sidebar">
           <ul class="sidebar-nav" id="sidebar-nav">
-             <li class="nav-item" style="background-color:#FFFFFF">
-              <a class="nav-link" href="/" style="background-color:#FFFFFF">
-                <i class="bi bi-grid" style="color:#8F3838"></i>
-                <span style="color:#8F3838">Dashboard</span>
+            <li class="nav-item" style="background-color: #ffffff">
+              <a class="nav-link" href="/" style="background-color: #ffffff">
+                <i class="bi bi-grid" style="color: #8f3838"></i>
+                <span style="color: #8f3838">Dashboard</span>
               </a>
             </li>
             <!-- End Dashboard Nav -->
@@ -148,7 +140,7 @@ Amplify.configure(awsExports);
               </ul>
             </li>
 
-             <li class="nav-item">
+            <li class="nav-item">
               <router-link to="/overview">
                 <a class="nav-link collapsed">
                   <i class="bi bi-bell"></i>
@@ -167,15 +159,13 @@ Amplify.configure(awsExports);
             </li>
             <!-- End Notifications Page Nav -->
 
-            <li class="nav-item" style="background-color:#FFF6F6">
+            <li class="nav-item" style="background-color: #fff6f6">
               <router-link to="/profile">
-              <a
-                class="nav-link collapsed"
-                style="background-color:#FFF6F6"
+                <a class="nav-link collapsed" style="background-color: #fff6f6">
+                  <i class="bi bi-person" style="color: red"></i>
+                  <span style="color: red">Profile</span>
+                </a></router-link
               >
-                <i class="bi bi-person" style="color:red"></i>
-                <span style="color:red">Profile</span>
-              </a></router-link>
             </li>
             <!-- End Profile Page Nav -->
           </ul>
@@ -183,184 +173,188 @@ Amplify.configure(awsExports);
         <!-- End Sidebar-->
 
         <main id="main" class="main">
-
-  <div class="pagetitle">
-    <h1>Profile</h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active">Profile</li>
-      </ol>
-    </nav>
-  </div>
-  <!-- End Page Title -->
-
-  <section class="section profile">
-    <div class="row">
-      <div class="col-xl-4">
-        <div class="card">
-          <div
-            class="
-              card-body
-              profile-card
-              pt-4
-              d-flex
-              flex-column
-              align-items-center
-            "
-          >
-            <img
-              src="../../public/frontend/assets/img/user.jpg"
-              alt="Profile"
-              class="rounded-circle"
-            />
-            <authenticator>
-              <template v-slot="{ user }">
-                <h2>
-                  {{ user.attributes.given_name }}
-                  {{ user.attributes.family_name }}
-                </h2></template
-              ></authenticator
-            >
+          <div class="pagetitle">
+            <h1>Profile</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">Profile</li>
+              </ol>
+            </nav>
           </div>
-        </div>
-      </div>
+          <!-- End Page Title -->
 
-      <div class="col-xl-8">
-        <div class="card">
-          <div class="card-body pt-3">
-            <!-- Bordered Tabs -->
-            <ul class="nav nav-tabs nav-tabs-bordered">
-              <li class="nav-item">
-                <button
-                  class="nav-link active"
-                  data-bs-toggle="tab"
-                  data-bs-target="#profile-overview"
-                >
-                  Overview
-                </button>
-              </li>
-
-              <li class="nav-item">
-                <button
-                  class="nav-link"
-                  data-bs-toggle="tab"
-                  data-bs-target="#profile-edit"
-                >
-                  Edit Profile
-                </button>
-              </li>
-            </ul>
-            <div class="tab-content pt-2">
-              <div
-                class="tab-pane fade show active profile-overview"
-                id="profile-overview"
-              >
-                <h5 class="card-title">Profile Details</h5>
-
-                <div class="row">
-                  <div class="col-lg-3 col-md-4 label">Full Name</div>
-                  <div class="col-lg-9 col-md-8">
+          <section class="section profile">
+            <div class="row">
+              <div class="col-xl-4">
+                <div class="card">
+                  <div
+                    class="
+                      card-body
+                      profile-card
+                      pt-4
+                      d-flex
+                      flex-column
+                      align-items-center
+                    "
+                  >
+                    <img
+                      src="../../public/frontend/assets/img/user.jpg"
+                      alt="Profile"
+                      class="rounded-circle"
+                    />
                     <authenticator>
                       <template v-slot="{ user }">
-                        {{ user.attributes.given_name }}
-                        {{ user.attributes.family_name }}
-                      </template></authenticator
-                    >
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-lg-3 col-md-4 label">Phone</div>
-                  <div class="col-lg-9 col-md-8">
-                    <authenticator>
-                      <template v-slot="{ user }">
-                        {{ user.attributes.phone_number }}
-                      </template></authenticator
-                    >
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-lg-3 col-md-4 label">Email</div>
-                  <div class="col-lg-9 col-md-8">
-                    <authenticator>
-                      <template v-slot="{ user }">
-                        {{ user.attributes.email }}
-                      </template></authenticator
+                        <h2>
+                          {{ user.attributes.given_name }}
+                          {{ user.attributes.family_name }}
+                        </h2></template
+                      ></authenticator
                     >
                   </div>
                 </div>
               </div>
 
-              <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
-                <!-- Profile Edit Form -->
-                <form v-on:submit.prevent>
-                  <div class="row mb-3">
-                    <label
-                      for="firstName"
-                      class="col-md-4 col-lg-3 col-form-label"
-                      >First Name</label
-                    >
-                    <div class="col-md-8 col-lg-9">
-                      <input
-                        name="firstName"
-                        type="text"
-                        class="form-control"
-                        id="firstName"
-                        v-model="formValues.given_name"
-                      />
-                    </div>
-                  </div>
+              <div class="col-xl-8">
+                <div class="card">
+                  <div class="card-body pt-3">
+                    <!-- Bordered Tabs -->
+                    <ul class="nav nav-tabs nav-tabs-bordered">
+                      <li class="nav-item">
+                        <button
+                          class="nav-link active"
+                          data-bs-toggle="tab"
+                          data-bs-target="#profile-overview"
+                        >
+                          Overview
+                        </button>
+                      </li>
 
-                  <div class="row mb-3">
-                    <label
-                      for="firstName"
-                      class="col-md-4 col-lg-3 col-form-label"
-                      >Family Name</label
-                    >
-                    <div class="col-md-8 col-lg-9">
-                      <input
-                        name="familyName"
-                        type="text"
-                        class="form-control"
-                        id="familyName"
-                        v-model="formValues.family_name"
-                      />
-                    </div>
-                  </div>
+                      <li class="nav-item">
+                        <button
+                          class="nav-link"
+                          data-bs-toggle="tab"
+                          data-bs-target="#profile-edit"
+                        >
+                          Edit Profile
+                        </button>
+                      </li>
+                    </ul>
+                    <div class="tab-content pt-2">
+                      <div
+                        class="tab-pane fade show active profile-overview"
+                        id="profile-overview"
+                      >
+                        <h5 class="card-title">Profile Details</h5>
 
-                  <div class="row mb-3">
-                    <label for="Phone" class="col-md-4 col-lg-3 col-form-label"
-                      >Phone</label
-                    >
-                    <div class="col-md-8 col-lg-9">
-                      <input
-                        name="phone"
-                        type="text"
-                        class="form-control"
-                        id="Phone"
-                        v-model="formValues.phone_number"
-                      />
-                    </div>
-                  </div>
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 label">Full Name</div>
+                          <div class="col-lg-9 col-md-8">
+                            <authenticator>
+                              <template v-slot="{ user }">
+                                {{ user.attributes.given_name }}
+                                {{ user.attributes.family_name }}
+                              </template></authenticator
+                            >
+                          </div>
+                        </div>
 
-                  <div class="text-center">
-                    <button @click="submitForm" class="btn btn-primary">
-                      Save Changes
-                    </button>
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 label">Phone</div>
+                          <div class="col-lg-9 col-md-8">
+                            <authenticator>
+                              <template v-slot="{ user }">
+                                {{ user.attributes.phone_number }}
+                              </template></authenticator
+                            >
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-3 col-md-4 label">Email</div>
+                          <div class="col-lg-9 col-md-8">
+                            <authenticator>
+                              <template v-slot="{ user }">
+                                {{ user.attributes.email }}
+                              </template></authenticator
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="tab-pane fade profile-edit pt-3"
+                        id="profile-edit"
+                      >
+                        <!-- Profile Edit Form -->
+                        <form v-on:submit.prevent>
+                          <div class="row mb-3">
+                            <label
+                              for="firstName"
+                              class="col-md-4 col-lg-3 col-form-label"
+                              >First Name</label
+                            >
+                            <div class="col-md-8 col-lg-9">
+                              <input
+                                name="firstName"
+                                type="text"
+                                class="form-control"
+                                id="firstName"
+                                v-model="formValues.given_name"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row mb-3">
+                            <label
+                              for="firstName"
+                              class="col-md-4 col-lg-3 col-form-label"
+                              >Family Name</label
+                            >
+                            <div class="col-md-8 col-lg-9">
+                              <input
+                                name="familyName"
+                                type="text"
+                                class="form-control"
+                                id="familyName"
+                                v-model="formValues.family_name"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row mb-3">
+                            <label
+                              for="Phone"
+                              class="col-md-4 col-lg-3 col-form-label"
+                              >Phone</label
+                            >
+                            <div class="col-md-8 col-lg-9">
+                              <input
+                                name="phone"
+                                type="text"
+                                class="form-control"
+                                id="Phone"
+                                v-model="formValues.phone_number"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="text-center">
+                            <button @click="submitForm" class="btn btn-primary">
+                              Save Changes
+                            </button>
+                          </div>
+                        </form>
+                        <!-- End Profile Edit Form -->
+                      </div>
+                    </div>
+                    <!-- End Bordered Tabs -->
                   </div>
-                </form>
-                <!-- End Profile Edit Form -->
+                </div>
               </div>
             </div>
-            <!-- End Bordered Tabs -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-   </main>
+          </section>
+        </main>
         <!-- End #main -->
 
         <!-- ======= Footer ======= -->
@@ -416,9 +410,9 @@ export default {
     };
   },
   methods: {
-       async signOut() {
+    async signOut() {
       await Auth.signOut();
-            this.$router.push('/Login')
+      this.$router.push("/Login");
     },
     async submitForm() {
       const user = await Auth.currentAuthenticatedUser();
