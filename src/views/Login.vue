@@ -15,7 +15,7 @@ Auth.configure(awsConfig);
           <!-- Sales Card -->
 
           <!-- Reports -->
-          <div class="col-11">
+          <div class="col-12" style="margin-left: 2%;">
             <div
               style="padding: var(--amplify-space-large); text-align: center"
             >
