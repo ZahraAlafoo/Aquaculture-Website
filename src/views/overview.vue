@@ -204,9 +204,8 @@ Amplify.configure(awsExports);
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=14"
                       width="100%"
-                      height="200"
+                      height="190"
                       frameborder="0"
-                     
                     ></iframe>
                   </div>
                 </div>
@@ -225,10 +224,9 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=15"
-                      width="350"
-                      height="200"
+                      width="100%"
+                      height="190"
                       frameborder="0"
-                      style="margin-left: 10%"
                     ></iframe>
                   </div>
                 </div>
@@ -250,10 +248,9 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=17"
-                      width="350"
-                      height="200"
+                      width="100%"
+                      height="190"
                       frameborder="0"
-                      style="margin-left: 10%"
                     ></iframe>
                   </div>
                 </div>
@@ -272,10 +269,9 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=16"
-                      width="350"
-                      height="200"
+                      width="100%"
+                      height="190"
                       frameborder="0"
-                      style="margin-left: 10%"
                     ></iframe>
                   </div>
                 </div>
@@ -297,10 +293,9 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=18"
-                      width="350"
-                      height="200"
+                      width="100%"
+                      height="190"
                       frameborder="0"
-                      style="margin-left: 10%"
                     ></iframe>
                   </div>
                 </div>
@@ -319,10 +314,9 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=19"
-                      width="350"
-                      height="200"
+                      width="100%"
+                      height="190"
                       frameborder="0"
-                      style="margin-left: 10%"
                     ></iframe>
                   </div>
                 </div>
@@ -344,10 +338,9 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=20"
-                      width="350"
-                      height="200"
+                      width="100%"
+                      height="190"
                       frameborder="0"
-                      style="margin-left: 10%"
                     ></iframe>
                   </div>
                 </div>
@@ -366,10 +359,9 @@ Amplify.configure(awsExports);
                   >
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=21"
-                      width="350"
-                      height="200"
+                      width="100%"
+                      height="190"
                       frameborder="0"
-                      style="margin-left: 10%"
                     ></iframe>
                   </div>
                 </div>
