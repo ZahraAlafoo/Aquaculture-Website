@@ -130,12 +130,12 @@ Amplify.configure(awsExports);
                 <li>
                   <router-link to="/change-temp">
                     <i class="bi bi-circle"></i
-                    ><span style="color:red">Change Temperature Rates</span>
+                    ><span style="color:red">Change Temperature Ranges</span>
                   </router-link>
                 </li>
                 <li>
                   <router-link to="/change-oxygen">
-                    <i class="bi bi-circle"></i><span>Change Oxygen Rates</span>
+                    <i class="bi bi-circle"></i><span>Change Oxygen Ranges</span>
                   </router-link>
                 </li>
               </ul>

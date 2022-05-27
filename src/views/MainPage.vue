@@ -132,12 +132,12 @@ Auth.configure(awsConfig);
                 <li>
                   <router-link to="/change-temp">
                     <i class="bi bi-circle"></i
-                    ><span>Change Temperature Rates</span>
+                    ><span>Change Temperature Ranges</span>
                   </router-link>
                 </li>
                 <li>
                   <router-link to="/change-oxygen">
-                    <i class="bi bi-circle"></i><span>Change Oxygen Rates</span>
+                    <i class="bi bi-circle"></i><span>Change Oxygen Ranges</span>
                   </router-link>
                 </li>
               </ul>

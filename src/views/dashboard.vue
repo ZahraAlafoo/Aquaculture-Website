@@ -22,6 +22,14 @@
 
           <!-- Reports -->
           <div class="col-12">
+            <button
+              id="btn1"
+              @click="exportGraphs()"
+              class="btn btn-primary"
+              style="margin-left: 78%; margin-bottom: 2%"
+            >
+              Export Graphs
+            </button>
             <div class="card">
               <div class="card-body pt-3">
                 <!-- Bordered Tabs -->
@@ -51,7 +59,7 @@
                     class="tab-pane fade show active profile-overview"
                     id="profile-overview"
                   >
-                    <div class="filter">
+                    <!--<div class="filter" >
                       <a class="icon" href="#" data-bs-toggle="dropdown"
                         ><i class="bi bi-three-dots"></i
                       ></a>
@@ -73,7 +81,7 @@
                           >
                         </li>
                       </ul>
-                    </div>
+                    </div>-->
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=8"
                       width="100%"
@@ -82,7 +90,7 @@
                     ></iframe>
                   </div>
                   <div class="tab-pane fade profile-edit" id="profile-edit">
-                    <div class="filter">
+                    <!--<div class="filter">
                       <a class="icon" data-bs-toggle="dropdown"
                         ><i class="bi bi-three-dots"></i
                       ></a>
@@ -104,7 +112,7 @@
                           >
                         </li>
                       </ul>
-                    </div>
+                    </div> -->
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=6"
                       width="100%"
@@ -234,14 +242,14 @@ export default {
     };
   },
   methods: {
-    async exportGraphs(url, name) {
+    async exportGraphs() {
       var doc = new jsPDF("p", "mm", "a4");
+      //*************************first graph**************************/
+      var image1 = await new Promise((resolve) => {
+        var image1 = new Image();
+        image1.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
 
-      var image = await new Promise((resolve) => {
-        var image = new Image();
-        image.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
-
-        image.onload = function () {
+        image1.onload = function () {
           var canvas = document.createElement("canvas");
           canvas.width = this.naturalWidth;
           canvas.height = this.naturalHeight;
@@ -256,11 +264,93 @@ export default {
           resolve(canvas.toDataURL("image/jpeg"));
         };
 
-        image.src = url;
+        image1.src = `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=8&width=1000&height=500&tz=Asia%2FBahrain`;
       });
 
-      doc.addImage(image, "PNG", 0, 0, 225, 112);
-      doc.save(name);
+      //*************************second graph**************************/
+      var image2 = await new Promise((resolve) => {
+        var image2 = new Image();
+        image2.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
+
+        image2.onload = function () {
+          var canvas = document.createElement("canvas");
+          canvas.width = this.naturalWidth;
+          canvas.height = this.naturalHeight;
+
+          //next three lines for white background in case png has a transparent background
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = "#fff"; /// set white fill style
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          canvas.getContext("2d").drawImage(this, 0, 0);
+
+          resolve(canvas.toDataURL("image/jpeg"));
+        };
+
+        image2.src = `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=6&width=1000&height=500&tz=Asia%2FBahrain`;
+      });
+
+      //*************************third graph**************************/
+      var image3 = await new Promise((resolve) => {
+        var image3 = new Image();
+        image3.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
+
+        image3.onload = function () {
+          var canvas = document.createElement("canvas");
+          canvas.width = this.naturalWidth;
+          canvas.height = this.naturalHeight;
+
+          //next three lines for white background in case png has a transparent background
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = "#fff"; /// set white fill style
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          canvas.getContext("2d").drawImage(this, 0, 0);
+
+          resolve(canvas.toDataURL("image/jpeg"));
+        };
+
+        image3.src = `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=12&width=1000&height=500&tz=Asia%2FBahrain`;
+      });
+
+      //*************************fourth graph**************************/
+      var image4 = await new Promise((resolve) => {
+        var image4 = new Image();
+        image4.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
+
+        image4.onload = function () {
+          var canvas = document.createElement("canvas");
+          canvas.width = this.naturalWidth;
+          canvas.height = this.naturalHeight;
+
+          //next three lines for white background in case png has a transparent background
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = "#fff"; /// set white fill style
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          canvas.getContext("2d").drawImage(this, 0, 0);
+
+          resolve(canvas.toDataURL("image/jpeg"));
+        };
+
+        image4.src = `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=10&width=1000&height=500&tz=Asia%2FBahrain`;
+      });
+
+      doc.text("Water temprature gauge", 5, 5, 0);
+      doc.addImage(image1, "PNG", 0, 10, 225, 112);
+
+      doc.text("Water temprature Line chart", 5, 130, 0);
+      doc.addImage(image2, "PNG", 0, 132, 225, 100);
+
+      doc.addPage("a4", "p");
+
+      doc.text("Disolved Oxygen gauge", 5, 5, 0);
+      doc.addImage(image3, "PNG", 0, 10, 225, 112);
+
+      doc.text("Disolved Oxygen Line chart", 5, 130, 0 );
+      doc.addImage(image4, 'PNG', 0, 132, 225, 100);
+
+      doc.save("Medaar_data.pdf");
     },
   },
   async beforeCreate() {
@@ -285,4 +375,29 @@ export default {
 </script>
 
 <style>
+#btn1 {
+  background: #f14141;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+#btn1:focus {
+  background: #f14141;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+#btn1:hover {
+  background: #f35959;
+}
+
+#btn1:disabled {
+  background: #f35959;
+}
 </style>

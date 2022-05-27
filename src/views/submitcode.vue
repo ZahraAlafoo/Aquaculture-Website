@@ -50,7 +50,7 @@ Auth.configure(awsConfig);
                     <label
                       for="password"
                       class="col-md-4 col-lg-3 col-form-label"
-                      >Password</label
+                      >New Password</label
                     >
                     <div class="col-md-8 col-lg-9">
                       <input
@@ -67,7 +67,7 @@ Auth.configure(awsConfig);
                     <label
                       for="passwordc"
                       class="col-md-4 col-lg-3 col-form-label"
-                      >Password</label
+                      >Repeat Password</label
                     >
                     <div class="col-md-8 col-lg-9">
                       <input
