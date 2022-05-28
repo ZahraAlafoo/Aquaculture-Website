@@ -142,7 +142,7 @@ Auth.configure(awsConfig);
                             id="password2"
                             v-model="formValues2.password"
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}"
-                            title="Password must have at least 8 characters. It must have lower case letters, numbers, special characters, numbers and upper case letters"
+                            title="Password must have at least 8 characters. It must have lower case letters, special characters, numbers and upper case letters"
                             required
                           />
                         </div>
@@ -342,7 +342,7 @@ export default {
                 )
               ) {
                 if (text.includes("UserNotFoundException")) {
-                  alert("User does not does not exist");
+                  alert("User does not exist");
                 } else {
                   alert("error signing in. Please try again");
                 }

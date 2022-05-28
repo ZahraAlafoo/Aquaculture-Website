@@ -100,10 +100,10 @@ export default {
         let text = err;
         let result = text.includes("InvalidLambdaResponseException");
         if (result) {
-          alert(
-            "Confirmed. You can successfully login now"
-          );
+          alert("Confirmed. You can successfully login now");
           this.$router.push("/Master");
+        } else if (err.toString().includes("CodeMismatchException")) {
+          alert("Invalid code. Please try again");
         } else {
           alert("error confirming sign up", err);
         }
@@ -111,7 +111,7 @@ export default {
     },
     async submitForm2() {
       try {
-        await Auth.resendSignUp(this.uid);
+        await Auth.forgotPassword(this.uid);
         alert("code resent successfully");
       } catch (err) {
         console.log("error resending code: ", err);

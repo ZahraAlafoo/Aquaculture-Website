@@ -41,6 +41,7 @@ Auth.configure(awsConfig);
                         type="number"
                         class="form-control"
                         id="code"
+                        required
                         v-model="formValues.code"
                       />
                     </div>
@@ -58,6 +59,9 @@ Auth.configure(awsConfig);
                         type="password"
                         class="form-control"
                         id="password"
+                        required
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}"
+                        title="Password must have at least 8 characters. It must have lower case letters, special characters, numbers and upper case letters"
                         v-model="formValues.password"
                       />
                     </div>
@@ -76,6 +80,7 @@ Auth.configure(awsConfig);
                         class="form-control"
                         id="passwordc"
                         v-model="formValues.passwordc"
+                        required
                       />
                       <p
                         style="color: red; display: inline; font-size: 12px"
@@ -88,11 +93,32 @@ Auth.configure(awsConfig);
                   </div>
 
                   <div class="text-center">
-                    <button @click="submitForm" class="btn btn-primary">
+                    <button
+                      @click="submitForm"
+                      class="btn btn-primary"
+                      :disabled="
+                        formValues.password != formValues.passwordc ||
+                        formValues.code == '' ||
+                        formValues.code == ' '
+                      "
+                    >
                       Submit
                     </button>
                   </div>
                 </form>
+
+                <button
+                  id="resend"
+                  style="
+                    margin-top: 16px;
+                    background-color: white;
+                    color: #f14141;
+                    border: 1px solid #ccd2d8;
+                  "
+                  @click="submitForm2"
+                >
+                  Resend code
+                </button>
               </div>
             </div>
           </div>
@@ -122,22 +148,33 @@ export default {
     };
   },
   methods: {
+    async submitForm2() {
+      try {
+        await Auth.forgotPassword(this.uid);
+        alert("code resent successfully");
+      } catch (err) {
+        console.log("error resending code: ", err);
+      }
+    },
     async submitForm() {
       try {
-        Auth.forgotPasswordSubmit(
+        await Auth.forgotPasswordSubmit(
           this.uid,
           String(this.formValues.code),
           this.formValues.password
-        )
-          .then(
-            (data) => console.log("data: " + data),
-            alert("Password updated successfully")
-          )
-          .catch((err) => console.log("error: " + err));
+        );
+
+        alert("Password updated successfully");
 
         this.$router.push("/Login");
       } catch (error) {
-        console.log("error confirming sign up", error);
+        if (error.toString().includes("CodeMismatchException")) {
+          alert("Invalid code. Please try again");
+        } else {
+          if (!error.toString().includes("InvalidPasswordException")) {
+            alert(error);
+          }
+        }
       }
     },
   },

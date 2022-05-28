@@ -46,7 +46,13 @@ Auth.configure(awsConfig);
                     </div>
                   </div>
                   <div class="text-center">
-                    <button @click="submitForm" class="btn btn-primary">
+                    <button
+                      :disabled="
+                        formValues.email == '' || formValues.email == ' '
+                      "
+                      @click="submitForm"
+                      class="btn btn-primary"
+                    >
                       Submit
                     </button>
                   </div>
@@ -80,11 +86,14 @@ export default {
     async submitForm() {
       try {
         // Send confirmation code to user's email
-        Auth.forgotPassword(this.formValues.email)
-          .then(this.$router.push("/submitcode/" + this.formValues.email))
-          .catch((err) => console.log(err));
+        await Auth.forgotPassword(this.formValues.email);
+        this.$router.push("/submitcode/" + this.formValues.email);
       } catch (error) {
-        console.log("error confirming sign up", error);
+        if (error.toString().includes("UserNotFoundException")) {
+          alert("User does not exist");
+        } else {
+          alert(error);
+        }
       }
     },
   },
