@@ -15,7 +15,7 @@ Auth.configure(awsConfig);
           <!-- Sales Card -->
 
           <!-- Reports -->
-          <div class="col-11" style="margin-left: 4%;">
+          <div class="col-11" style="margin-left: 4%">
             <div
               style="padding: var(--amplify-space-large); text-align: center"
             >
@@ -367,9 +367,16 @@ export default {
         });
         this.$router.push("/confirmPage/" + this.formValues2.email);
       } catch (error) {
-        if(error.toString().includes("UsernameExistsException"))
-        console.log("error signing up. Please try again", error);
-        alert("An account with the given email already exists. Try registering with a new email");
+        if (error.toString().includes("UsernameExistsException")) {
+          alert(
+            "An account with the given email already exists. Try registering with a new email"
+          );
+        } else if (error.toString().includes("InvalidPasswordException")) {
+          alert("Password must have at least 8 characters. It must have lower case letters, numbers, special characters, numbers and upper case letters");
+        } else {
+          alert("error signing up. Please try again");
+          console.log("error signing up. Please try again", error);
+        }
       }
     },
   },
