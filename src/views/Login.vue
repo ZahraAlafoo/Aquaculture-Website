@@ -141,7 +141,7 @@ Auth.configure(awsConfig);
                             class="form-control"
                             id="password2"
                             v-model="formValues2.password"
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}"
                             title="Password must have at least 8 characters. It must have lower case letters, numbers, special characters, numbers and upper case letters"
                             required
                           />
@@ -355,6 +355,7 @@ export default {
       }
     },
     async submitForm2() {
+      console.log(this.formValues2.password);
       try {
         const { user } = await Auth.signUp({
           username: this.formValues2.email,
@@ -371,11 +372,15 @@ export default {
           alert(
             "An account with the given email already exists. Try registering with a new email"
           );
-        } else if (error.toString().includes("InvalidPasswordException")) {
-          alert("Password must have at least 8 characters. It must have lower case letters, numbers, special characters, numbers and upper case letters");
         } else {
-          alert("error signing up. Please try again");
-          console.log("error signing up. Please try again", error);
+          if (
+            !error.toString().includes("Invalid phone number format") &&
+            !error.toString().includes("InvalidPasswordException") &&
+            !error.toString().includes("Password cannot be empty")
+          ) {
+            alert("error signing up. Please try again");
+            console.log("error signing up. Please try again", error);
+          }
         }
       }
     },
