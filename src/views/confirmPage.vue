@@ -101,7 +101,7 @@ export default {
         let result = text.includes("InvalidLambdaResponseException");
         if (result) {
           alert(
-            "Confirmed. You can successfully login now/nYou should receive an email with a link. Click on the confirmtion link to be able to receive notifictions"
+            "Confirmed. You can successfully login now"
           );
           this.$router.push("/Master");
         } else {

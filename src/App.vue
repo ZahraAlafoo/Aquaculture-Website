@@ -6,18 +6,6 @@ import Master from "./views/Master.vue";
 
 
 <template>
-  <!--<authenticator id="auth">
-    <template v-slot:header>
-      <div style="padding: var(--amplify-space-large); text-align: center">
-        <img
-          class="amplify-image"
-          alt="Amplify logo"
-          src="../public/frontend/assets/img/Picture3.png"
-        />
-      </div>
-    </template> 
-    <Master />
-  </authenticator> -->
   <Master />
 </template>
 

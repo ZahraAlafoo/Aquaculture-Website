@@ -1,7 +1,4 @@
 <template>
-  <button :hidden="formValues.useremail != 'medaar.manager@hotmail.com'">
-    zahra
-  </button>
   <div class="pagetitle">
     <h1>Dashboard</h1>
     <nav>
@@ -23,6 +20,7 @@
           <!-- Reports -->
           <div class="col-12">
             <button
+              :hidden="formValues.useremail != 'medaar.manager@hotmail.com'"
               id="btn1"
               @click="exportGraphs()"
               class="btn btn-primary"
@@ -59,29 +57,6 @@
                     class="tab-pane fade show active profile-overview"
                     id="profile-overview"
                   >
-                    <!--<div class="filter" >
-                      <a class="icon" href="#" data-bs-toggle="dropdown"
-                        ><i class="bi bi-three-dots"></i
-                      ></a>
-                      <ul
-                        class="
-                          dropdown-menu dropdown-menu-end dropdown-menu-arrow
-                        "
-                      >
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            @click="
-                              exportGraphs(
-                                `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=8&width=1000&height=500&tz=Asia%2FBahrain`,
-                                'temperature_gauge.pdf'
-                              )
-                            "
-                            >Export as PDF</a
-                          >
-                        </li>
-                      </ul>
-                    </div>-->
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=8"
                       width="100%"
@@ -90,29 +65,6 @@
                     ></iframe>
                   </div>
                   <div class="tab-pane fade profile-edit" id="profile-edit">
-                    <!--<div class="filter">
-                      <a class="icon" data-bs-toggle="dropdown"
-                        ><i class="bi bi-three-dots"></i
-                      ></a>
-                      <ul
-                        class="
-                          dropdown-menu dropdown-menu-end dropdown-menu-arrow
-                        "
-                      >
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            @click="
-                              exportGraphs(
-                                `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=6&width=1000&height=500&tz=Asia%2FBahrain`,
-                                'temperature_graph.pdf'
-                              )
-                            "
-                            >Export as PDF</a
-                          >
-                        </li>
-                      </ul>
-                    </div> -->
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=6"
                       width="100%"
@@ -347,8 +299,8 @@ export default {
       doc.text("Disolved Oxygen gauge", 5, 5, 0);
       doc.addImage(image3, "PNG", 0, 10, 225, 112);
 
-      doc.text("Disolved Oxygen Line chart", 5, 130, 0 );
-      doc.addImage(image4, 'PNG', 0, 132, 225, 100);
+      doc.text("Disolved Oxygen Line chart", 5, 130, 0);
+      doc.addImage(image4, "PNG", 0, 132, 225, 100);
 
       doc.save("Medaar_data.pdf");
     },

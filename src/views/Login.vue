@@ -367,7 +367,9 @@ export default {
         });
         this.$router.push("/confirmPage/" + this.formValues2.email);
       } catch (error) {
-        console.log("error signing up. Please try again");
+        if(error.toString().includes("UsernameExistsException"))
+        console.log("error signing up. Please try again", error);
+        alert("An account with the given email already exists. Try registering with a new email");
       }
     },
   },

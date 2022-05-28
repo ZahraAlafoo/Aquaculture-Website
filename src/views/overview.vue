@@ -134,7 +134,8 @@ Amplify.configure(awsExports);
                 </li>
                 <li>
                   <router-link to="/change-oxygen">
-                    <i class="bi bi-circle"></i><span>Change Oxygen Ranges</span>
+                    <i class="bi bi-circle"></i
+                    ><span>Change Oxygen Ranges</span>
                   </router-link>
                 </li>
               </ul>
@@ -188,6 +189,19 @@ Amplify.configure(awsExports);
             class="section contact"
             style="margin-bottom: 150px; margin-top: 50px"
           >
+            <div class="row">
+              <div class="col-12">
+                <button
+                :hidden="formValues.useremail != 'medaar.manager@hotmail.com'"
+                  id="btn1"
+                  @click="exportGraphs()"
+                  class="btn btn-primary"
+                  style="margin-left: 85%; margin-bottom: 2%"
+                >
+                  Export Graphs
+                </button>
+              </div>
+            </div>
             <div class="row">
               <div class="col-xl-6">
                 <div class="card">
@@ -403,13 +417,254 @@ import { Auth } from "aws-amplify";
 
 export default {
   name: "coxygen",
+  data() {
+    return {
+      formValues: {
+        phone_number: "",
+      },
+    };
+  },
+  async beforeCreate() {
+    try {
+      var email = "email";
+      await Auth.currentAuthenticatedUser().then((user) => {
+        this.formValues.useremail = user.attributes.email;
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   methods: {
     async signOut() {
       await Auth.signOut();
       this.$router.push("/Login");
     },
+    async exportGraphs() {
+      var doc = new jsPDF("p", "mm", "a4");
+      //*************************first graph**************************/
+      var image = await new Promise((resolve) => {
+        var image = new Image();
+        image.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
+
+        image.onload = function () {
+          var canvas = document.createElement("canvas");
+          canvas.width = this.naturalWidth;
+          canvas.height = this.naturalHeight;
+
+          //next three lines for white background in case png has a transparent background
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = "#fff"; /// set white fill style
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          canvas.getContext("2d").drawImage(this, 0, 0);
+
+          resolve(canvas.toDataURL("image/jpeg"));
+        };
+
+        image.src = `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=14&width=1000&height=500&tz=Asia%2FBahrain`;
+      });
+
+      //*************************second graph**************************/
+      var image1 = await new Promise((resolve) => {
+        var image1 = new Image();
+        image1.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
+
+        image1.onload = function () {
+          var canvas = document.createElement("canvas");
+          canvas.width = this.naturalWidth;
+          canvas.height = this.naturalHeight;
+
+          //next three lines for white background in case png has a transparent background
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = "#fff"; /// set white fill style
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          canvas.getContext("2d").drawImage(this, 0, 0);
+
+          resolve(canvas.toDataURL("image/jpeg"));
+        };
+
+        image1.src = `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=15&width=1000&height=500&tz=Asia%2FBahrain`;
+      });
+
+      //*************************third graph**************************/
+      var image2 = await new Promise((resolve) => {
+        var image2 = new Image();
+        image2.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
+
+        image2.onload = function () {
+          var canvas = document.createElement("canvas");
+          canvas.width = this.naturalWidth;
+          canvas.height = this.naturalHeight;
+
+          //next three lines for white background in case png has a transparent background
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = "#fff"; /// set white fill style
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          canvas.getContext("2d").drawImage(this, 0, 0);
+
+          resolve(canvas.toDataURL("image/jpeg"));
+        };
+
+        image2.src = `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=17&width=1000&height=500&tz=Asia%2FBahrain`;
+      });
+
+      //*************************fourth graph**************************/
+      var image3 = await new Promise((resolve) => {
+        var image3 = new Image();
+        image3.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
+
+        image3.onload = function () {
+          var canvas = document.createElement("canvas");
+          canvas.width = this.naturalWidth;
+          canvas.height = this.naturalHeight;
+
+          //next three lines for white background in case png has a transparent background
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = "#fff"; /// set white fill style
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          canvas.getContext("2d").drawImage(this, 0, 0);
+
+          resolve(canvas.toDataURL("image/jpeg"));
+        };
+
+        image3.src = `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=16&width=1000&height=500&tz=Asia%2FBahrain`;
+      });
+
+      //*************************fifth graph**************************/
+      var image4 = await new Promise((resolve) => {
+        var image4 = new Image();
+        image4.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
+
+        image4.onload = function () {
+          var canvas = document.createElement("canvas");
+          canvas.width = this.naturalWidth;
+          canvas.height = this.naturalHeight;
+
+          //next three lines for white background in case png has a transparent background
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = "#fff"; /// set white fill style
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          canvas.getContext("2d").drawImage(this, 0, 0);
+
+          resolve(canvas.toDataURL("image/jpeg"));
+        };
+
+        image4.src = `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=18&width=1000&height=500&tz=Asia%2FBahrain`;
+      });
+
+      //*************************6th graph**************************/
+      var image5 = await new Promise((resolve) => {
+        var image5 = new Image();
+        image5.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
+
+        image5.onload = function () {
+          var canvas = document.createElement("canvas");
+          canvas.width = this.naturalWidth;
+          canvas.height = this.naturalHeight;
+
+          //next three lines for white background in case png has a transparent background
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = "#fff"; /// set white fill style
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          canvas.getContext("2d").drawImage(this, 0, 0);
+
+          resolve(canvas.toDataURL("image/jpeg"));
+        };
+
+        image5.src = `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=19&width=1000&height=500&tz=Asia%2FBahrain`;
+      });
+
+      //*************************7th graph**************************/
+      var image6 = await new Promise((resolve) => {
+        var image6 = new Image();
+        image6.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
+
+        image6.onload = function () {
+          var canvas = document.createElement("canvas");
+          canvas.width = this.naturalWidth;
+          canvas.height = this.naturalHeight;
+
+          //next three lines for white background in case png has a transparent background
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = "#fff"; /// set white fill style
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          canvas.getContext("2d").drawImage(this, 0, 0);
+
+          resolve(canvas.toDataURL("image/jpeg"));
+        };
+
+        image6.src = `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=20&width=1000&height=500&tz=Asia%2FBahrain`;
+      });
+
+      //*************************7th graph**************************/
+      var image7 = await new Promise((resolve) => {
+        var image7 = new Image();
+        image7.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
+
+        image7.onload = function () {
+          var canvas = document.createElement("canvas");
+          canvas.width = this.naturalWidth;
+          canvas.height = this.naturalHeight;
+
+          //next three lines for white background in case png has a transparent background
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = "#fff"; /// set white fill style
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          canvas.getContext("2d").drawImage(this, 0, 0);
+
+          resolve(canvas.toDataURL("image/jpeg"));
+        };
+
+        image7.src = `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=21&width=1000&height=500&tz=Asia%2FBahrain`;
+      });
+
+      doc.text("Tank 1", 5, 5, 0);
+      doc.addImage(image, "PNG", 0, 10, 210, 110);
+
+      doc.text("Tank 2", 5, 130, 0);
+      doc.addImage(image1, "PNG", 0, 132, 210, 110);
+
+      doc.addPage("a4", "p");
+
+      doc.text("Tank 3", 5, 5, 0);
+      doc.addImage(image2, "PNG", 0, 10, 210, 110);
+
+      doc.text("Tank 4", 5, 130, 0);
+      doc.addImage(image3, "PNG", 0, 132, 210, 110);
+
+      doc.addPage("a4", "p");
+
+      doc.text("Tank 5", 5, 5, 0);
+      doc.addImage(image4, "PNG", 0, 10, 210, 110);
+
+      doc.text("Tank 6", 5, 130, 0);
+      doc.addImage(image5, "PNG", 0, 132, 210, 110);
+
+      doc.addPage("a4", "p");
+
+      doc.text("Tank 7", 5, 5, 0);
+      doc.addImage(image6, "PNG", 0, 10, 210, 110);
+
+      doc.text("Tank 8", 5, 130, 0);
+      doc.addImage(image7, "PNG", 0, 132, 210, 110);
+
+      doc.save("Medaar_tankoverview.pdf");
+    },
   },
   mounted: function () {
+    const recaptchaScript = document.createElement("script");
+    recaptchaScript.setAttribute(
+      "src",
+      "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"
+    );
+    document.head.appendChild(recaptchaScript);
     postscribe(
       "#container",
       `<script>/**
