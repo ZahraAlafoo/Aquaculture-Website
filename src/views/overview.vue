@@ -491,37 +491,76 @@ export default {
         `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=21&width=1000&height=500&tz=Asia%2FBahrain`
       );
 
-      doc.text("Tank 1", 5, 5, 0);
-      doc.addImage(image1, "PNG", 0, 10, 210, 110);
+      var date = new Date();
+      doc.setFontSize(10);
+      doc.text(date.toString(), 5, 5, 0);
+      doc.rect(
+        20,
+        20,
+        doc.internal.pageSize.width - 40,
+        doc.internal.pageSize.height - 40,
+        "S"
+      );
+      doc.setTextColor("#700101");
+      doc.setFontSize(20);
+      doc.text("Medaar's Report", 81, 30, 0);
+      doc.setFontSize(16);
+      doc.text("Tank 1", 95, 45, 0);
 
-      doc.text("Tank 2", 5, 130, 0);
-      doc.addImage(image2, "PNG", 0, 132, 210, 110);
+      doc.addImage(image1, "PNG", 47, 48, 115, 45);
+
+      doc.text("Tank 2", 95, 104, 0);
+      doc.addImage(image2, "PNG", 47, 108, 115, 45);
+      
+   
+
+      doc.text("Tank 3", 95, 164, 0);
+      doc.addImage(image3, "PNG", 47, 169, 115, 45);
+
+      doc.text("Tank 4", 95, 224, 0);
+      doc.addImage(image4, "PNG", 47, 228, 115, 45);
 
       doc.addPage("a4", "p");
 
-      doc.text("Tank 3", 5, 5, 0);
-      doc.addImage(image3, "PNG", 0, 10, 210, 110);
+      doc.rect(
+        20,
+        20,
+        doc.internal.pageSize.width - 40,
+        doc.internal.pageSize.height - 40,
+        "S"
+      );
+      doc.setTextColor("#700101");
+     
+      doc.setFontSize(16);
+      doc.text("Tank 5", 95, 40, 0);
 
-      doc.text("Tank 4", 5, 130, 0);
-      doc.addImage(image4, "PNG", 0, 132, 210, 110);
+      doc.addImage(image5, "PNG", 47, 44, 115, 45);
 
-      doc.addPage("a4", "p");
+      doc.text("Tank 6", 95, 100, 0);
+      doc.addImage(image6, "PNG", 47, 104, 115, 45);
 
-      doc.text("Tank 5", 5, 5, 0);
-      doc.addImage(image5, "PNG", 0, 10, 210, 110);
+      doc.text("Tank 7", 95, 160, 0);
+      doc.addImage(image7, "PNG", 47, 164, 115, 45);
 
-      doc.text("Tank 6", 5, 130, 0);
-      doc.addImage(image6, "PNG", 0, 132, 210, 110);
+      doc.text("Tank 8", 95, 220, 0);
+      doc.addImage(image8, "PNG", 47, 224, 115, 45);
 
-      doc.addPage("a4", "p");
+      var name =
+        "Medaar_tankoverview(" +
+        date.getFullYear() +
+        "-" +
+        (date.getMonth() + 1) +
+        "-" +
+        date.getDate() +
+        "_" +
+        date.getHours() +
+        ":" +
+        date.getMinutes() +
+        ":" +
+        date.getSeconds() +
+        ").pdf";
 
-      doc.text("Tank 7", 5, 5, 0);
-      doc.addImage(image7, "PNG", 0, 10, 210, 110);
-
-      doc.text("Tank 8", 5, 130, 0);
-      doc.addImage(image8, "PNG", 0, 132, 210, 110);
-
-      doc.save("Medaar_tankoverview.pdf");
+      doc.save(name);
     },
   },
   mounted: function () {

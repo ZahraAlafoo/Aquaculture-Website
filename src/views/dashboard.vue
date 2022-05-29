@@ -194,7 +194,7 @@ export default {
     };
   },
   methods: {
-    async getDataUri(url){
+    async getDataUri(url) {
       var image = await new Promise((resolve) => {
         var image = new Image();
         image.setAttribute("crossOrigin", "anonymous"); //getting images from external domain
@@ -220,27 +220,67 @@ export default {
     },
     async exportGraphs() {
       var doc = new jsPDF("p", "mm", "a4");
-      
-      var image1 = await this.getDataUri( `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=8&width=1000&height=500&tz=Asia%2FBahrain`);
-      var image2 = await this.getDataUri( `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=6&width=1000&height=500&tz=Asia%2FBahrain`);
-      var image3 = await this.getDataUri( `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=12&width=1000&height=500&tz=Asia%2FBahrain`);
-      var image4 = await this.getDataUri( `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=10&width=1000&height=500&tz=Asia%2FBahrain`);
 
-      doc.text("Water temprature gauge", 5, 5, 0);
-      doc.addImage(image1, "PNG", 0, 10, 225, 112);
+      var image1 = await this.getDataUri(
+        `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=8&width=1000&height=500&tz=Asia%2FBahrain`
+      );
+      var image2 = await this.getDataUri(
+        `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=6&width=1000&height=500&tz=Asia%2FBahrain`
+      );
+      var image3 = await this.getDataUri(
+        `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=12&width=1000&height=500&tz=Asia%2FBahrain`
+      );
+      var image4 = await this.getDataUri(
+        `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&refresh=5m&theme=light&panelId=10&width=1000&height=500&tz=Asia%2FBahrain`
+      );
+      var date = new Date();
+      doc.setFontSize(10);
+      doc.text(date.toString(), 5, 5, 0);
+      doc.rect(
+        20,
+        20,
+        doc.internal.pageSize.width - 40,
+        doc.internal.pageSize.height - 40,
+        "S"
+      );
+      doc.setTextColor("#700101");
+      doc.setFontSize(20);
+      doc.text("Medaar's Report", 83, 30, 0);
+      doc.setFontSize(16);
+      doc.text("Water temprature gauge", 75, 50, 0);
+      doc.addImage(image1, "PNG", 25, 55, 160, 90);
 
-      doc.text("Water temprature Line chart", 5, 130, 0);
-      doc.addImage(image2, "PNG", 0, 132, 225, 100);
+      doc.text("Water temprature Line chart", 70, 155, 0);
+      doc.addImage(image2, "PNG", 25, 160, 160, 90);
 
       doc.addPage("a4", "p");
+      doc.rect(
+        20,
+        20,
+        doc.internal.pageSize.width - 40,
+        doc.internal.pageSize.height - 40,
+        "S"
+      );
+      doc.text("Disolved Oxygen gauge", 75, 40, 0);
+      doc.addImage(image3, "PNG", 25, 45, 160, 90);
 
-      doc.text("Disolved Oxygen gauge", 5, 5, 0);
-      doc.addImage(image3, "PNG", 0, 10, 225, 112);
-
-      doc.text("Disolved Oxygen Line chart", 5, 130, 0);
-      doc.addImage(image4, "PNG", 0, 132, 225, 100);
-
-      doc.save("Medaar_data.pdf");
+      doc.text("Disolved Oxygen Line chart", 70, 155, 0);
+      doc.addImage(image4, "PNG", 25, 159, 160, 90);
+      var name =
+        "Medaar_data(" +
+        date.getFullYear() +
+        "-" +
+        (date.getMonth() + 1) +
+        "-" +
+        date.getDate() +
+        "_" +
+        date.getHours() +
+        ":" +
+        date.getMinutes() +
+        ":" +
+        date.getSeconds() +
+        ").pdf";
+      doc.save(name);
     },
   },
   async beforeCreate() {
