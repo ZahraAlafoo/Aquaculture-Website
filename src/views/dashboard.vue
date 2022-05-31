@@ -109,29 +109,6 @@
                     class="tab-pane fade show active profile-overview"
                     id="profile-overview2"
                   >
-                    <div class="filter">
-                      <a class="icon" href="#" data-bs-toggle="dropdown"
-                        ><i class="bi bi-three-dots"></i
-                      ></a>
-                      <ul
-                        class="
-                          dropdown-menu dropdown-menu-end dropdown-menu-arrow
-                        "
-                      >
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            @click="
-                              exportGraphs(
-                                `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=12&width=1000&height=500&tz=Asia%2FBahrain`,
-                                'oxygen_gauge.pdf'
-                              )
-                            "
-                            >Export as PDF</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=12"
                       width="100%"
@@ -140,29 +117,6 @@
                     ></iframe>
                   </div>
                   <div class="tab-pane fade profile-edit" id="profile-edit2">
-                    <div class="filter">
-                      <a class="icon" href="#" data-bs-toggle="dropdown"
-                        ><i class="bi bi-three-dots"></i
-                      ></a>
-                      <ul
-                        class="
-                          dropdown-menu dropdown-menu-end dropdown-menu-arrow
-                        "
-                      >
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            @click="
-                              exportGraphs(
-                                `https://s6nw9567xd.execute-api.us-east-1.amazonaws.com/render/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=10&width=1000&height=500&tz=Asia%2FBahrain`,
-                                'oxygen_graph.pdf'
-                              )
-                            "
-                            >Export as PDF</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
                     <iframe
                       src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=10"
                       width="100%"
