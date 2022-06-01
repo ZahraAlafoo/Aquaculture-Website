@@ -158,7 +158,7 @@ export default {
     },
     async submitForm() {
       try {
-        await Auth.forgotPasswordSubmit(
+         Auth.forgotPasswordSubmit(
           this.uid,
           String(this.formValues.code),
           this.formValues.password
