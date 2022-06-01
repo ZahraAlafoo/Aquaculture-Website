@@ -189,197 +189,205 @@ Amplify.configure(awsExports);
             class="section contact"
             style="margin-bottom: 150px; margin-top: 50px"
           >
-            <div class="row">
-              <div class="col-12">
-                <button
-                  :hidden="formValues.useremail != 'medaar.manager@hotmail.com'"
-                  id="btn1"
-                  @click="exportGraphs()"
-                  class="btn btn-primary"
-                  style="margin-left: 85%; margin-bottom: 2%"
-                >
-                  Export Graphs
-                </button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xl-6">
-                <div class="card">
-                  <div
-                    class="
-                      card-body
-                      profile-card
-                      pt-4
-                      d-flex
-                      flex-column
-                      align-items-center
+            <div :hidden="formValues.loading == 0">
+              <div class="row">
+                <div class="col-12">
+                  <button
+                    :hidden="
+                      formValues.useremail != 'medaar.manager@hotmail.com'
                     "
+                    id="btn1"
+                    @click="exportGraphs()"
+                    class="btn btn-primary"
+                    style="margin-left: 85%; margin-bottom: 2%"
                   >
-                    <iframe
-                      src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=14"
-                      width="100%"
-                      height="190"
-                      frameborder="0"
-                    ></iframe>
+                    Export Report
+                  </button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6">
+                  <div class="card">
+                    <div
+                      class="
+                        card-body
+                        profile-card
+                        pt-4
+                        d-flex
+                        flex-column
+                        align-items-center
+                      "
+                    >
+                      <iframe
+                        src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=14"
+                        width="100%"
+                        height="190"
+                        frameborder="0"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6">
+                  <div class="card">
+                    <div
+                      class="
+                        card-body
+                        profile-card
+                        pt-4
+                        d-flex
+                        flex-column
+                        align-items-center
+                      "
+                    >
+                      <iframe
+                        src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=15"
+                        width="100%"
+                        height="190"
+                        frameborder="0"
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-6">
-                <div class="card">
-                  <div
-                    class="
-                      card-body
-                      profile-card
-                      pt-4
-                      d-flex
-                      flex-column
-                      align-items-center
-                    "
-                  >
-                    <iframe
-                      src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=15"
-                      width="100%"
-                      height="190"
-                      frameborder="0"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div class="row">
-              <div class="col-xl-6">
-                <div class="card">
-                  <div
-                    class="
-                      card-body
-                      profile-card
-                      pt-4
-                      d-flex
-                      flex-column
-                      align-items-center
-                    "
-                  >
-                    <iframe
-                      src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=17"
-                      width="100%"
-                      height="190"
-                      frameborder="0"
-                    ></iframe>
+              <div class="row">
+                <div class="col-xl-6">
+                  <div class="card">
+                    <div
+                      class="
+                        card-body
+                        profile-card
+                        pt-4
+                        d-flex
+                        flex-column
+                        align-items-center
+                      "
+                    >
+                      <iframe
+                        src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=17"
+                        width="100%"
+                        height="190"
+                        frameborder="0"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6">
+                  <div class="card">
+                    <div
+                      class="
+                        card-body
+                        profile-card
+                        pt-4
+                        d-flex
+                        flex-column
+                        align-items-center
+                      "
+                    >
+                      <iframe
+                        src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=16"
+                        width="100%"
+                        height="190"
+                        frameborder="0"
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-6">
-                <div class="card">
-                  <div
-                    class="
-                      card-body
-                      profile-card
-                      pt-4
-                      d-flex
-                      flex-column
-                      align-items-center
-                    "
-                  >
-                    <iframe
-                      src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=16"
-                      width="100%"
-                      height="190"
-                      frameborder="0"
-                    ></iframe>
+
+              <div class="row">
+                <div class="col-xl-6">
+                  <div class="card">
+                    <div
+                      class="
+                        card-body
+                        profile-card
+                        pt-4
+                        d-flex
+                        flex-column
+                        align-items-center
+                      "
+                    >
+                      <iframe
+                        src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=18"
+                        width="100%"
+                        height="190"
+                        frameborder="0"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6">
+                  <div class="card">
+                    <div
+                      class="
+                        card-body
+                        profile-card
+                        pt-4
+                        d-flex
+                        flex-column
+                        align-items-center
+                      "
+                    >
+                      <iframe
+                        src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=19"
+                        width="100%"
+                        height="190"
+                        frameborder="0"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xl-6">
+                  <div class="card">
+                    <div
+                      class="
+                        card-body
+                        profile-card
+                        pt-4
+                        d-flex
+                        flex-column
+                        align-items-center
+                      "
+                    >
+                      <iframe
+                        src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=20"
+                        width="100%"
+                        height="190"
+                        frameborder="0"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6">
+                  <div class="card">
+                    <div
+                      class="
+                        card-body
+                        profile-card
+                        pt-4
+                        d-flex
+                        flex-column
+                        align-items-center
+                      "
+                    >
+                      <iframe
+                        src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=21"
+                        width="100%"
+                        height="190"
+                        frameborder="0"
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="row">
-              <div class="col-xl-6">
-                <div class="card">
-                  <div
-                    class="
-                      card-body
-                      profile-card
-                      pt-4
-                      d-flex
-                      flex-column
-                      align-items-center
-                    "
-                  >
-                    <iframe
-                      src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=18"
-                      width="100%"
-                      height="190"
-                      frameborder="0"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-6">
-                <div class="card">
-                  <div
-                    class="
-                      card-body
-                      profile-card
-                      pt-4
-                      d-flex
-                      flex-column
-                      align-items-center
-                    "
-                  >
-                    <iframe
-                      src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=19"
-                      width="100%"
-                      height="190"
-                      frameborder="0"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xl-6">
-                <div class="card">
-                  <div
-                    class="
-                      card-body
-                      profile-card
-                      pt-4
-                      d-flex
-                      flex-column
-                      align-items-center
-                    "
-                  >
-                    <iframe
-                      src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=20"
-                      width="100%"
-                      height="190"
-                      frameborder="0"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-6">
-                <div class="card">
-                  <div
-                    class="
-                      card-body
-                      profile-card
-                      pt-4
-                      d-flex
-                      flex-column
-                      align-items-center
-                    "
-                  >
-                    <iframe
-                      src="https://admin.bp-cic.com/d-solo/V29nmK8nz/dive-deep?orgId=1&theme=light&panelId=21"
-                      width="100%"
-                      height="190"
-                      frameborder="0"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+            <div style="margin-bottom: 10%" :hidden="formValues.loading != 0">
+              <div class="loader"></div>
+              Preparing the report...
             </div>
           </section>
         </main>
@@ -421,6 +429,7 @@ export default {
     return {
       formValues: {
         phone_number: "",
+        loading: 1,
       },
     };
   },
@@ -464,6 +473,7 @@ export default {
       return image;
     },
     async exportGraphs() {
+      this.formValues.loading = 0;
       var doc = new jsPDF("p", "mm", "a4");
 
       var image1 = await this.getDataUri(
@@ -492,7 +502,18 @@ export default {
       );
 
       var date = new Date();
+
       doc.setFontSize(10);
+
+      doc.setFillColor(255, 246, 246);
+      doc.rect(
+        0,
+        0,
+        doc.internal.pageSize.width,
+        doc.internal.pageSize.height,
+        "F"
+      );
+      doc.setDrawColor(112, 1, 1);
       doc.text(date.toString(), 5, 5, 0);
       doc.rect(
         20,
@@ -501,8 +522,12 @@ export default {
         doc.internal.pageSize.height - 40,
         "S"
       );
+
+      doc.addFont("Nunito Sans", "sans-serif", "normal");
+      doc.setFont("Arial");
       doc.setTextColor("#700101");
       doc.setFontSize(20);
+
       doc.text("Medaar's Report", 81, 30, 0);
       doc.setFontSize(16);
       doc.text("Tank 1", 95, 45, 0);
@@ -511,8 +536,6 @@ export default {
 
       doc.text("Tank 2", 95, 104, 0);
       doc.addImage(image2, "PNG", 47, 108, 115, 45);
-      
-   
 
       doc.text("Tank 3", 95, 164, 0);
       doc.addImage(image3, "PNG", 47, 169, 115, 45);
@@ -522,6 +545,15 @@ export default {
 
       doc.addPage("a4", "p");
 
+      doc.setFillColor(255, 246, 246);
+      doc.rect(
+        0,
+        0,
+        doc.internal.pageSize.width,
+        doc.internal.pageSize.height,
+        "F"
+      );
+      doc.setDrawColor(112, 1, 1);
       doc.rect(
         20,
         20,
@@ -530,7 +562,7 @@ export default {
         "S"
       );
       doc.setTextColor("#700101");
-     
+
       doc.setFontSize(16);
       doc.text("Tank 5", 95, 40, 0);
 
@@ -561,6 +593,8 @@ export default {
         ").pdf";
 
       doc.save(name);
+
+      this.formValues.loading = 1;
     },
   },
   mounted: function () {
@@ -888,4 +922,36 @@ export default {
 </script>
 
 <style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #844c50;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: 2%;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 </style>

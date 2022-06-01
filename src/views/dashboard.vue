@@ -18,7 +18,7 @@
           <!-- Sales Card -->
 
           <!-- Reports -->
-          <div class="col-12">
+          <div class="col-12" :hidden="formValues.loading == 0">
             <button
               :hidden="formValues.useremail != 'medaar.manager@hotmail.com'"
               id="btn1"
@@ -26,7 +26,7 @@
               class="btn btn-primary"
               style="margin-left: 78%; margin-bottom: 2%"
             >
-              Export Graphs
+              Export Report
             </button>
             <div class="card">
               <div class="card-body pt-3">
@@ -38,7 +38,7 @@
                       data-bs-toggle="tab"
                       data-bs-target="#profile-overview"
                     >
-                      Pie Chart
+                      Gauge Chart
                     </button>
                   </li>
 
@@ -79,7 +79,7 @@
           </div>
 
           <!-- Reports -->
-          <div class="col-12">
+          <div class="col-12" :hidden="formValues.loading == 0">
             <div class="card">
               <div class="card-body pt-3">
                 <!-- Bordered Tabs -->
@@ -90,7 +90,7 @@
                       data-bs-toggle="tab"
                       data-bs-target="#profile-overview2"
                     >
-                      Pie Chart
+                      Gauge Chart
                     </button>
                   </li>
 
@@ -129,6 +129,11 @@
               </div>
             </div>
           </div>
+
+          <div style="margin-bottom: 10%" :hidden="formValues.loading != 0">
+            <div class="loader"></div>
+            Preparing the report...
+          </div>
         </div>
       </div>
     </div>
@@ -144,6 +149,7 @@ export default {
     return {
       formValues: {
         phone_number: "",
+        loading: 1,
       },
     };
   },
@@ -173,6 +179,7 @@ export default {
       return image;
     },
     async exportGraphs() {
+      this.formValues.loading = 0;
       var doc = new jsPDF("p", "mm", "a4");
 
       var image1 = await this.getDataUri(
@@ -189,6 +196,16 @@ export default {
       );
       var date = new Date();
       doc.setFontSize(10);
+     
+      doc.setFillColor(255, 246, 246);
+      doc.rect(
+        0,
+        0,
+        doc.internal.pageSize.width,
+        doc.internal.pageSize.height,
+        "F"
+      );
+      doc.setDrawColor(112, 1, 1);
       doc.text(date.toString(), 5, 5, 0);
       doc.rect(
         20,
@@ -197,6 +214,7 @@ export default {
         doc.internal.pageSize.height - 40,
         "S"
       );
+
       doc.setTextColor("#700101");
       doc.setFontSize(20);
       doc.text("Medaar's Report", 83, 30, 0);
@@ -208,6 +226,15 @@ export default {
       doc.addImage(image2, "PNG", 25, 160, 160, 90);
 
       doc.addPage("a4", "p");
+     doc.setFillColor(255, 246, 246);
+      doc.rect(
+        0,
+        0,
+        doc.internal.pageSize.width,
+        doc.internal.pageSize.height,
+        "F"
+      );
+      doc.setDrawColor(112, 1, 1);
       doc.rect(
         20,
         20,
@@ -235,6 +262,7 @@ export default {
         date.getSeconds() +
         ").pdf";
       doc.save(name);
+      this.formValues.loading = 1;
     },
   },
   async beforeCreate() {
@@ -283,5 +311,38 @@ export default {
 
 #btn1:disabled {
   background: #f35959;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #844c50;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: 2%;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
