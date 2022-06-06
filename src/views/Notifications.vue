@@ -133,7 +133,8 @@ Amplify.configure(awsExports);
                 </li>
                 <li>
                   <router-link to="/change-oxygen">
-                    <i class="bi bi-circle"></i><span>Change Oxygen Ranges</span>
+                    <i class="bi bi-circle"></i
+                    ><span>Change Oxygen Ranges</span>
                   </router-link>
                 </li>
               </ul>
@@ -204,7 +205,11 @@ Amplify.configure(awsExports);
                         <br />
                         <p>{{ formValues.notifications[idx].message }}</p>
                         <hr />
-                        <p class="mb-0">{{ formValues.notifications[idx].date.toLocaleString() }}</p>
+                        <p class="mb-0">
+                          {{
+                            formValues.notifications[idx].date.toLocaleString()
+                          }}
+                        </p>
                         <button
                           type="button"
                           class="btn-close"
@@ -216,14 +221,9 @@ Amplify.configure(awsExports);
                   </div>
                 </div>
 
-                <div
-                  style="
-                    padding-left: 42%;
-                    padding-top: 10%;
-                    padding-bottom: 10%;
-                  "
-                >
+                <div style="padding-top: 10%; padding-bottom: 10%">
                   <div class="loader" :hidden="formValues.min != 0"></div>
+                  Loading Notifications...
                 </div>
               </div>
             </div>
