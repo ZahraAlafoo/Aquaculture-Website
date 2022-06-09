@@ -30,6 +30,23 @@
                 Export Report
               </button>
             </div>
+            <div class="card" style="border:none;background-color:#FFF6F6;box-shadow:none"><button
+                :hidden="formValues.useremail != 'medaar.manager@hotmail.com'"
+                id="btn1"
+                @click="exportGraphs()"
+                class="btn btn-primary"
+                style="width:180px;margin-bottom:10px; margin-left: auto;margin-right: 0;"
+              >
+                Export Report
+              </button><button
+                :hidden="formValues.useremail != 'medaar.manager@hotmail.com'"
+                id="btn1"
+                @click="exportGraphs()"
+                class="btn btn-primary"
+                style="width:25%;margin-bottom:0; margin-left: auto;margin-right: 0;"
+              >
+                Export Report
+              </button></div>
             <div class="card">
               <div class="card-body pt-3">
                 <!-- Bordered Tabs -->
