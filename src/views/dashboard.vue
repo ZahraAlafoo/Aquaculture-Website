@@ -24,7 +24,7 @@
               id="btn1"
               @click="exportGraphs()"
               class="btn btn-primary"
-              style="margin-left: 78%; margin-bottom: 2%"
+              style="margin-left: 78%; margin-bottom: 2%; padding-right:20px"
             >
               Export Report
             </button>
