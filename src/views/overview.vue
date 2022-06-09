@@ -192,17 +192,15 @@ Amplify.configure(awsExports);
             <div :hidden="formValues.loading == 0">
               <div class="row">
                 <div class="col-12">
-                  <button
-                    :hidden="
-                      formValues.useremail != 'medaar.manager@hotmail.com'
-                    "
-                    id="btn1"
-                    @click="exportGraphs()"
-                    class="btn btn-primary"
-                    style="margin-left: 85%; margin-bottom: 2%"
-                  >
-                    Export Report
-                  </button>
+                  <div class="card" style="border:none;background-color:#FFF6F6;box-shadow:none;margin-bottom:10px"><button
+                :hidden="formValues.useremail != 'medaar.manager@hotmail.com'"
+                id="btn1"
+                @click="exportGraphs()"
+                class="btn btn-primary"
+                style="width:180px;margin-bottom:0px; margin-left: auto;margin-right: 0;"
+              >
+                Export Report
+              </button></div>
                 </div>
               </div>
               <div class="row">

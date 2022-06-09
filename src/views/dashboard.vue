@@ -19,31 +19,13 @@
 
           <!-- Reports -->
           <div class="col-12" :hidden="formValues.loading == 0">
-            <div class="col-11">
-              <button
+            
+            <div class="card" style="border:none;background-color:#FFF6F6;box-shadow:none;margin-bottom:10px"><button
                 :hidden="formValues.useremail != 'medaar.manager@hotmail.com'"
                 id="btn1"
                 @click="exportGraphs()"
                 class="btn btn-primary"
-                style="margin-left: 76%; margin-bottom: 2%"
-              >
-                Export Report
-              </button>
-            </div>
-            <div class="card" style="border:none;background-color:#FFF6F6;box-shadow:none"><button
-                :hidden="formValues.useremail != 'medaar.manager@hotmail.com'"
-                id="btn1"
-                @click="exportGraphs()"
-                class="btn btn-primary"
-                style="width:180px;margin-bottom:10px; margin-left: auto;margin-right: 0;"
-              >
-                Export Report
-              </button><button
-                :hidden="formValues.useremail != 'medaar.manager@hotmail.com'"
-                id="btn1"
-                @click="exportGraphs()"
-                class="btn btn-primary"
-                style="width:25%;margin-bottom:0; margin-left: auto;margin-right: 0;"
+                style="width:180px;margin-bottom:0px; margin-left: auto;margin-right: 0;"
               >
                 Export Report
               </button></div>
