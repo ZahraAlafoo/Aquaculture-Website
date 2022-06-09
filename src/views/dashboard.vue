@@ -19,15 +19,17 @@
 
           <!-- Reports -->
           <div class="col-12" :hidden="formValues.loading == 0">
-            <button
-              :hidden="formValues.useremail != 'medaar.manager@hotmail.com'"
-              id="btn1"
-              @click="exportGraphs()"
-              class="btn btn-primary"
-              style="margin-left: 78%; margin-bottom: 2%; padding-right:20px"
-            >
-              Export Report
-            </button>
+            <div class="col-11">
+              <button
+                :hidden="formValues.useremail != 'medaar.manager@hotmail.com'"
+                id="btn1"
+                @click="exportGraphs()"
+                class="btn btn-primary"
+                style="margin-left: 76%; margin-bottom: 2%"
+              >
+                Export Report
+              </button>
+            </div>
             <div class="card">
               <div class="card-body pt-3">
                 <!-- Bordered Tabs -->
@@ -196,7 +198,7 @@ export default {
       );
       var date = new Date();
       doc.setFontSize(10);
-     
+
       doc.setFillColor(255, 246, 246);
       doc.rect(
         0,
@@ -226,7 +228,7 @@ export default {
       doc.addImage(image2, "PNG", 25, 160, 160, 90);
 
       doc.addPage("a4", "p");
-     doc.setFillColor(255, 246, 246);
+      doc.setFillColor(255, 246, 246);
       doc.rect(
         0,
         0,
