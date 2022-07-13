@@ -25,7 +25,7 @@ Auth.configure(awsConfig);
                 src="../../public/frontend/assets/img/Picture3.png"
               />
             </div>
-            <div class="card">
+            <div class="card" style="width:90%">
               <div class="card-body pt-3">
                 <!-- Bordered Tabs -->
                 <ul class="nav nav-tabs nav-tabs-bordered">
